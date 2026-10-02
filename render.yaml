@@ -1,0 +1,123 @@
+# Render blueprint — the backend half of Veilla.
+#
+# Two services, one image. The Dockerfile at the repo root builds both: the
+# web service runs its default CMD (uvicorn), the worker overrides it with
+# `python -m src.runner`. Sharing the image means the pipeline the worker
+# runs is byte-for-byte the one the API was built against, which a second
+# Dockerfile could not guarantee.
+#
+# The frontend is NOT here — it is a separate Vercel project, because
+# Next.js on Vercel gets its own CDN, image optimisation and preview
+# deployments for nothing.
+#
+# ## Why the worker is its own service
+#
+# It could run as a thread inside the API and save the price of a second
+# instance. Separating them buys three things instead:
+#
+#   * Logs that are not interleaved. Debugging an ingest pass without
+#     wading through HTTP access lines is worth more than it sounds.
+#   * Restarting one without the other.
+#   * An API health check that reflects the API. Folded together, a wedged
+#     pass and a healthy endpoint are indistinguishable from outside.
+#
+# ## Creating it
+#
+#   Render dashboard -> New -> Blueprint -> point it at this repository.
+#
+# Every secret below is declared `sync: false`, which means the blueprint
+# names the variable but never carries its value. Render prompts for each
+# one on first apply, and they live in the dashboard afterwards. No
+# credential is ever committed here.
+#
+# ## Naming
+#
+# Everything is prefixed `veilla-news`, after the repository. A service
+# name is also its public hostname — `<name>.onrender.com`, unique across
+# all of Render — so short generic names are usually taken.
+#
+# ## Region
+#
+# Frankfurt, both services. The Supabase project is in AWS eu-west-1
+# (Ireland) and Render has no Irish region, so Frankfurt is the closest
+# available — roughly 20ms away, against roughly 90ms from the US regions.
+# An ingest pass makes thousands of round trips, so this is not cosmetic.
+
+services:
+  # ── The API ───────────────────────────────────────────────────────────
+  - type: web
+    name: veilla-news-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    # The free instance type sleeps after 15 minutes of no traffic and
+    # takes the better part of a minute to wake. For a link someone clicks
+    # once, that reads as a broken site rather than a cold start.
+    plan: starter
+    region: frankfurt
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - fromGroup: veilla-news-backend
+
+  # ── The ingest worker ─────────────────────────────────────────────────
+  - type: worker
+    name: veilla-news-worker
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    # Overrides the image's uvicorn CMD. `run_forever` catches everything,
+    # including fatal errors, so the process is not expected to exit; Render
+    # restarting it would be a symptom, not the design.
+    #
+    # For a single pass — debugging, or a manual catch-up — the same module
+    # takes `--once` and exits with a code a scheduler can read.
+    dockerCommand: python -m src.runner
+    plan: starter
+    region: frankfurt
+    autoDeploy: true
+    envVars:
+      - fromGroup: veilla-news-backend
+
+# ── Shared configuration ────────────────────────────────────────────────
+#
+# One group, both services. The API and the pipeline talk to the same
+# database with the same credentials; two copies would eventually disagree,
+# and the failure would look like data corruption rather than a typo.
+envVarGroups:
+  - name: veilla-news-backend
+    envVars:
+      # Required.
+      - key: DATABASE_URL
+        sync: false          # Supabase pooler (port 6543)
+      - key: DATABASE_URL_DIRECT
+        sync: false          # Supabase direct (port 5432) — see src/db.py
+      - key: SUPABASE_URL
+        sync: false          # used to fetch the JWKS that validates tokens
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false          # server-side key for Realtime broadcasts
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://news.veilla.io
+      - key: WEBAPP_URL
+        value: https://news.veilla.io
+      - key: ADMIN_EMAILS
+        sync: false          # comma-separated; grants /admin
+      - key: RESEND_API_KEY
+        sync: false
+      - key: NOTIF_FROM
+        sync: false          # e.g. Veilla <hello@veilla.io>
+
+      # Optional. Left unset, each feature no-ops rather than failing.
+      - key: SENTRY_DSN
+        sync: false
+      - key: SENTRY_ENVIRONMENT
+        value: production
+      - key: MCP_SHARED_TOKEN
+        sync: false          # required only to expose /mcp to remote clients
+      - key: VEILLA_MCP_USER_SLUG
+        sync: false          # the identity the MCP tools act as
+
+      # Deliberately absent: SKIP_CATALOG_SYNC and FORCE_CATALOG_SYNC.
+      # The database is the source of truth and is already populated, so
+      # `sync_catalog_to_db` skips on its own. Setting FORCE here would
+      # overwrite live feeds with the JSON snapshot on the next deploy.

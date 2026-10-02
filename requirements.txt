@@ -1,0 +1,22 @@
+feedparser==6.0.12
+beautifulsoup4==4.13.4
+openai==2.20.0
+python-dotenv==1.2.1
+requests==2.33.1
+python-dateutil==2.9.0.post0
+numpy==2.4.4
+scikit-learn==1.8.0
+resend==2.7.0
+psycopg2-binary==2.9.12
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pyjwt[crypto]==2.10.1
+sentry-sdk==2.61.0
+luqum==1.0.0
+
+# MCP server (mcp/ — local-only for V1, deployed later on mcp.veilla.io)
+# Pinned to a version that uses starlette<0.39 so it stays compatible with
+# FastAPI 0.115. sse-starlette pinned downgrade for same reason (mcp 1.28+
+# bumps starlette to 1.x which breaks FastAPI).
+mcp==1.15.0
+sse-starlette<2.0

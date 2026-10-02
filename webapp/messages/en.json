@@ -1,0 +1,760 @@
+{
+  "landing": {
+    "nav": {
+      "signin": "Sign in",
+      "trial": "Try Desk"
+    },
+    "hero": {
+      "h1": "Give your time back to journalism.",
+      "sub": "AI-powered monitoring for newsrooms.",
+      "ctaPrimary": "Try Desk",
+      "ctaGhost": "Sign in"
+    },
+    "figures": {
+      "sources": "Sources",
+      "countries": "Countries",
+      "languages": "Languages",
+      "published": "Daily tracked publications"
+    },
+    "core": {
+      "lead": "Continuously gather",
+      "sources": "articles, press releases, public announcements, regulatory texts, studies and statistics, posts, more",
+      "pick": "Select sources and add your own.",
+      "mid": "Everything is",
+      "verbs": "analysed, enriched and grouped"
+    },
+    "platform": {
+      "title": "One platform, two solutions",
+      "sub": "Two ways to work with the information.",
+      "news": {
+        "name": "Desk",
+        "body": "A collaborative workspace that gathers all your sources. You can explore, filter and organise stories in real time.",
+        "cta": "Try Desk"
+      },
+      "signal": {
+        "name": "Signal",
+        "body": "AI agents continuously watch the flow of information for you. They reason with your context and your preferences, and deliver what matters to you. Signal integrates directly with the tools you use every day.",
+        "cta": "Contact us",
+        "steps": {
+          "ingest": "Ingestion",
+          "reason": "Reasoning",
+          "act": "Action"
+        }
+      }
+    },
+    "partners": {
+      "title": "We want to shape a future where journalists spend more time on",
+      "titleAccent": "original work.",
+      "lead": "We are looking for newsrooms to work with us and build the future of the platform together.",
+      "cta": "Contact us"
+    },
+    "finalCta": {
+      "title": "Upgrade your news monitoring",
+      "sub": "Desk's free demo runs on a fixed set of sources. Talk to us to add your own.",
+      "cardTrial": "Try Desk",
+      "cardContact": "Talk to us"
+    },
+    "footer": {
+      "colProduct": "Products",
+      "colCompany": "Company",
+      "colLegal": "Legal",
+      "links": {
+        "desk": "Desk",
+        "signal": "Signal",
+        "partners": "Design partners",
+        "contact": "Talk to us",
+        "email": "mario@veilla.app",
+        "privacy": "Privacy policy",
+        "legalNotice": "Legal notice"
+      },
+      "copy": "© 2026 Veilla · All rights reserved",
+      "hosting": "All data hosted in Europe"
+    },
+    "lang": {
+      "toggle": "Switch language"
+    }
+  },
+  "legal": {
+    "copy": "© 2026 Veilla · All rights reserved"
+  },
+  "common": {
+    "search": "Search…",
+    "clear": "Clear",
+    "close": "Close",
+    "tagInputHint": "Enter to add",
+    "removeItem": "Remove {name}",
+    "back": "Back"
+  },
+  "multiSelect": {
+    "allLabel": "All",
+    "nSelected": "{count, plural, one {# selected} other {# selected}}",
+    "selectAll": "Select all",
+    "clearAll": "Clear all",
+    "searchPlaceholder": "Search…",
+    "noResults": "No results",
+    "removeItem": "Remove {name}"
+  },
+  "loading": {
+    "default": "Loading…"
+  },
+  "nav": {
+    "watch": "Watch",
+    "library": "Saved",
+    "settings": "Settings",
+    "primaryAriaLabel": "Main navigation",
+    "desk": "Desk",
+    "signal": "Signal",
+    "agents": "Agents",
+    "context": "Context",
+    "decisions": "Decisions",
+    "monitors": "Monitors",
+    "toolSwitchAriaLabel": "Tool",
+    "groups": {
+      "consult": "Browse",
+      "configure": "Configure"
+    },
+    "switchTo": "Switch to {tool}"
+  },
+  "rail": {
+    "collapseSidebar": "Collapse sidebar",
+    "expandSidebar": "Expand sidebar"
+  },
+  "foldersView": {
+    "emptyFolder": "This folder is empty. Add a story from Watch via the folder icon."
+  },
+  "topbar": {
+    "notifications": "Notifications — soon"
+  },
+  "userMenu": {
+    "signIn": "Sign in",
+    "signedInAs": "Signed in as",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "account": "Account",
+    "openAccountMenu": "Open account menu",
+    "language": "Language",
+    "contact": "Contact the team"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Stories you follow.",
+    "empty": "No notifications yet.",
+    "clearAll": "Clear all",
+    "clearAllConfirmTitle": "Clear your inbox?",
+    "clearAllConfirmBody": "{count, plural, =0 {Nothing to clear.} one {# notification will be deleted for good.} other {# notifications will be deleted for good.}}",
+    "clearAllCancel": "Cancel",
+    "clearAllConfirm": "Clear all",
+    "loadMore": "Load more",
+    "loading": "Loading…",
+    "unreadCount": "{count, plural, one {# unread notification} other {# unread notifications}}",
+    "noUnread": "Notifications",
+    "genericStory": "a story",
+    "rowStoryUpdate": "New update on {story}",
+    "rowStoryNewArticle": "New article in {story}",
+    "rowGeneric": "New notification"
+  },
+  "settings": {
+    "title": "Settings",
+    "sectionsAriaLabel": "Settings sections",
+    "comingSoon": "Coming soon.",
+    "tabs": {
+      "preferences": "Preferences",
+      "notifications": "Notifications",
+      "profile": "Profile"
+    },
+    "preferences": {
+      "title": "Reading preferences",
+      "intro": "Define your editorial scope. Veilla will apply these filters by default to your Watch. Saved views ignore these preferences.",
+      "timeWindow": {
+        "label": "Time window",
+        "hint": "Articles older than this are hidden from your Watch. Pick a preset or type a value in hours (1–168).",
+        "unit": "h",
+        "ariaLabel": "Time window in hours",
+        "viewPresets": "View presets",
+        "h6": "6 hours",
+        "h12": "12 hours",
+        "h24": "24 hours",
+        "h48": "48 hours",
+        "h72": "72 hours",
+        "h168": "7 days (168 h)"
+      },
+      "categories": {
+        "label": "Categories to follow",
+        "hint": "Empty = all categories. Pick the ones you want to see in your Watch.",
+        "ariaLabel": "Categories to follow"
+      },
+      "articleTypes": {
+        "label": "Article types to follow",
+        "hint": "Empty = all types. Pick the ones to surface (news, feature, opinion…).",
+        "ariaLabel": "Article types to follow",
+        "news": "News",
+        "feature": "Feature",
+        "opinion": "Opinion",
+        "interview": "Interview",
+        "recap": "Recap",
+        "multimedia": "Multimedia",
+        "institutional": "Institutional"
+      },
+      "places": {
+        "label": "Countries and regions to follow",
+        "hint": "Empty = no geographic filter. Pick the countries or regions you want to track.",
+        "ariaLabel": "Countries and regions to follow"
+      },
+      "save": "Save",
+      "cancel": "Cancel",
+      "reset": "Reset to defaults",
+      "saved": "Preferences saved",
+      "saveError": "Failed to save",
+      "unsavedHint": "Unsaved changes"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "intro": "Pick the channels for each notification type. If both are off, the type is fully muted.",
+      "typeColumn": "Type",
+      "inAppColumn": "In-app",
+      "emailColumn": "Email",
+      "mutedHint": "Muted on all channels.",
+      "storyFollowIncludeArticles": "Also notify on new articles",
+      "storyFollowIncludeArticlesHint": "By default you only get update notifications (= synthesized deltas of meaningful events). Tick to also get pinged on every new article attached to a followed story.",
+      "save": "Save",
+      "cancel": "Cancel",
+      "saved": "Preferences saved",
+      "saveError": "Failed to save",
+      "unsavedHint": "Unsaved changes",
+      "group": {
+        "story_follow": {
+          "label": "Followed stories",
+          "hint": "When a new article or update lands on a story you follow (bell button).",
+          "ariaInApp": "Story notifications — in-app",
+          "ariaEmail": "Story notifications — email"
+        }
+      }
+    },
+    "profile": {
+      "title": "Profile",
+      "comingSoon": "Edit your name, email, password — coming soon."
+    }
+  },
+  "themeToggle": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "sidebar": {
+    "sectionViews": "Views",
+    "sectionMyViews": "My views",
+    "sectionExplore": "Explore",
+    "newView": "New view",
+    "editView": "Edit view",
+    "noViewsYet": "No views yet",
+    "newFolder": "New folder",
+    "all": "All",
+    "unread": "Unread",
+    "saved": "Saved",
+    "ignored": "Ignored",
+    "topics": "Topics",
+    "persons": "People",
+    "organizations": "Organizations",
+    "places": "Mentioned places",
+    "events": "Events",
+    "markets": "Markets",
+    "products": "Products",
+    "subjectCountries": "Countries covered",
+    "origin": "Origin",
+    "languages": "Languages",
+    "feeds": "Feeds",
+    "topStories": "Top stories",
+    "signInToFilterUnread": "Sign in to your watch to filter unread",
+    "signInToFilterSaved": "Sign in to your watch to filter saved",
+    "signInToFilterTop": "Sign in to your watch to see Top stories",
+    "signInToViewIgnored": "Sign in to your watch to view ignored",
+    "viewUnread": "View unread",
+    "viewSaved": "View saved stories",
+    "viewTopStories": "Most covered stories (sorted by number of sources)",
+    "noSavedYet": "No saved stories yet",
+    "noTopYet": "No multi-source stories yet",
+    "viewIgnoredAction": "View ignored stories",
+    "backToNormal": "Back to normal view",
+    "noIgnoredYet": "No ignored stories yet"
+  },
+  "list": {
+    "stories": "Stories",
+    "tabAll": "All",
+    "tabCommon": "Common",
+    "tabOriginal": "Original",
+    "commonHint": "Picked up by 2+ media",
+    "originalHint": "Single source",
+    "filters": "Filters",
+    "advancedFilters": "Advanced filters (cumulative)",
+    "search": "Search…",
+    "noResultsFiltered": "No story matches the filters.",
+    "noResultsWindow": "No story in the current window.",
+    "resetToShowAll": "Reset to show all",
+    "tryAgainLater": "Try again in a few minutes",
+    "lastUpdated": "Updated {time}",
+    "lastUpdatedTooltip": "Last checked at {time}",
+    "viewKind": "View",
+    "editView": "Edit view",
+    "markAll": {
+      "button": "Mark all as read",
+      "tooltip": "Mark every story in the feed as read",
+      "confirmTitle": "Mark all as read?",
+      "confirmBody": "{count, plural, =0 {Nothing unread.} one {# unread story across the whole feed will be marked as read (active filter ignored).} other {# unread stories across the whole feed will be marked as read (active filter ignored).}}",
+      "cancel": "Cancel",
+      "confirm": "Mark all as read"
+    },
+    "allCaughtUp": "You're all caught up"
+  },
+  "period": {
+    "tooltip": "Time window — applies to the story list and view badges",
+    "period1h": "1 h",
+    "period6h": "6 h",
+    "period24h": "24 h",
+    "period3d": "3 d",
+    "period7d": "7 d",
+    "period14d": "14 d"
+  },
+  "viewDialog": {
+    "createTitle": "New view",
+    "editTitle": "Edit view",
+    "description": "A view is a saved set of filter criteria. Stories matching the criteria appear automatically.",
+    "nameLabel": "Name",
+    "namePlaceholder": "e.g. AI news",
+    "create": "Create view",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete view"
+  },
+  "folderDialog": {
+    "createTitle": "New folder",
+    "editTitle": "Rename folder",
+    "description": "A folder is a collection of stories you save together. You explicitly add stories from your Watch.",
+    "nameLabel": "Name",
+    "namePlaceholder": "e.g. Trump story",
+    "create": "Create folder",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete folder",
+    "deleteConfirmTitle": "Delete folder \"{name}\"?",
+    "deleteConfirmBody": "The {count, plural, =0 {stories it contains} one {1 story it contains will stay} other {# stories it contains will stay}} in your saves — only the folder disappears.",
+    "deleteConfirmCancel": "Cancel",
+    "deleteConfirmConfirm": "Delete",
+    "nameTaken": "A folder with this name already exists"
+  },
+  "folderPicker": {
+    "title": "Add to a folder",
+    "empty": "You don't have any folder yet",
+    "createInline": "New folder",
+    "createPlaceholder": "Folder name",
+    "createCancel": "Cancel",
+    "createConfirm": "Create",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close"
+  },
+  "filtersDialog": {
+    "title": "Advanced filters",
+    "description": "Cumulative. Combined with AND on top of the sidebar selection.",
+    "period": "Period",
+    "viewPresets": "View presets",
+    "keywords": "Keywords",
+    "keywordsHint": "Every word must appear in the story",
+    "keywordsPlaceholder": "e.g. interest rate, generative AI, elections…",
+    "categories": "Categories",
+    "languages": "Languages",
+    "feeds": "Feeds",
+    "feedsAvailable": "{count} feeds available",
+    "originLabel": "Source origin",
+    "originHint": "Country the source publishes from (article.source_country)",
+    "subjectCountriesLabel": "Countries covered",
+    "subjectCountriesHint": "Countries the article is about (normalizer-tagged). Best for reliable alerts.",
+    "places": "Mentioned places",
+    "placesHint": "Free-text place mentions (cities, landmarks, sub-regions…). Noisy by extraction — use \"Countries covered\" above for countries.",
+    "placesPlaceholder": "Filter places…",
+    "country": "Country",
+    "place": "Place",
+    "persons": "People",
+    "personsPlaceholder": "Filter people…",
+    "organizations": "Organizations",
+    "organizationsPlaceholder": "Filter organizations…",
+    "events": "Events",
+    "eventsPlaceholder": "Filter events…",
+    "markets": "Markets",
+    "marketsPlaceholder": "Filter markets…",
+    "products": "Products",
+    "productsPlaceholder": "Filter products…",
+    "clearAll": "Clear all",
+    "restorePrefs": "My preferences",
+    "restorePrefsHint": "Restore my default preferences (Settings → Preferences)",
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "noAdvancedFilter": "No advanced filter",
+    "advancedFilterCount": "{count, plural, one {# advanced filter} other {# advanced filters}}",
+    "noResults": "No results",
+    "exclusionsHeader": "Exclusions",
+    "exclusionsHint": "Articles to hide (seeded from your default preferences, editable for this session)",
+    "articleTypes": "Article types",
+    "excludedCategories": "Excluded categories",
+    "excludedArticleTypes": "Excluded types",
+    "excludedKeywords": "Excluded keywords",
+    "excludedKeywordsPlaceholder": "e.g. recap, opinion, sponsored…",
+    "articleTypeLabels": {
+      "news": "News",
+      "feature": "Feature",
+      "opinion": "Opinion",
+      "interview": "Interview",
+      "recap": "Recap",
+      "multimedia": "Multimedia",
+      "institutional": "Institutional"
+    },
+    "categoryLabels": {
+      "Domestic Politics": "Domestic politics",
+      "Geopolitics & Conflicts": "Geopolitics & conflicts",
+      "Justice & Legal Affairs": "Justice & legal affairs",
+      "Crime & Public Safety": "Crime & public safety",
+      "Economy": "Economy",
+      "Finance & Markets": "Finance & markets",
+      "Business & Industry": "Business & industry",
+      "Energy & Climate": "Energy & climate",
+      "Technology & AI": "Technology & AI",
+      "Science": "Science",
+      "Health": "Health",
+      "Society & Labour": "Society & labour",
+      "Education": "Education",
+      "Media & Culture": "Media & culture",
+      "Sport": "Sport",
+      "Other": "Other"
+    }
+  },
+  "cluster": {
+    "sourceLabel": "{count, plural, one {source} other {sources}}",
+    "articleLabel": "{count, plural, one {article} other {articles}}",
+    "new": "New",
+    "newUpdate": "New update",
+    "viewMore": "{count, plural, one {Show 1 more article} other {Show # more articles}}",
+    "hideExtra": "Hide"
+  },
+  "detail": {
+    "synthesis": "Synthesis",
+    "updates": "Updates",
+    "updatesPlaceholder": "Timeline of key facts — soon.",
+    "firstArticle": "First article",
+    "lastArticle": "Last article",
+    "readArticle": "Read article",
+    "copyLink": "Copy link",
+    "backToCluster": "Back to cluster",
+    "showOriginal": "Show original",
+    "showTranslation": "Show translation",
+    "originalLanguage": "Original language: {language}",
+    "byline": "By {names}",
+    "entities": "Entities",
+    "persons": "People",
+    "orgs": "Organisations",
+    "locations": "Places",
+    "events": "Events",
+    "markets": "Markets",
+    "products": "Products",
+    "countries": "Countries",
+    "nArticles": "{count, plural, one {# article} other {# articles}}",
+    "statusActive": "active",
+    "statusClosed": "closed",
+    "startedAge": "started {age}"
+  },
+  "actions": {
+    "save": "Save",
+    "unsave": "Remove from saves",
+    "folders": "Add to a folder",
+    "removeFromFolder": "Remove from this folder",
+    "follow": "Follow this story",
+    "unfollow": "Stop following",
+    "share": "Share",
+    "copied": "Copied to clipboard",
+    "copyFailed": "Copy failed",
+    "ignore": "Ignore this story",
+    "restore": "Restore this story",
+    "demoOnly": "unavailable in demo"
+  },
+  "library": {
+    "title": "Bookmarks",
+    "saves": "{count, plural, one {# save} other {# saves}}",
+    "results": "{count, plural, one {# result} other {# results}}",
+    "search": "Search…",
+    "emptyTitle": "Nothing saved yet.",
+    "emptyDescription": "When you save a story from your watch, it appears here — accessible anytime, no date limit.",
+    "goToWatch": "Go to my watch →",
+    "noResultsSearching": "No save matches your search.",
+    "refineSearch": "Refine or clear your search",
+    "viewAll": "All views",
+    "viewEmpty": "No views yet — create one from Watch",
+    "noResultsFiltered": "No save matches the active filters.",
+    "refineFilters": "Try clearing a filter",
+    "confirmUnsaveTitle": "Remove this story for good?",
+    "confirmUnsaveDescription": "This story has closed — once removed from your saves, the cleanup will purge it within two weeks and you won't be able to find it again. Active stories you can always re-save from your Watch.",
+    "confirmUnsaveCancel": "Cancel",
+    "confirmUnsaveConfirm": "Remove anyway"
+  },
+  "libraryNav": {
+    "bookmarks": "Bookmarks",
+    "folders": "Folders",
+    "newFolder": "New folder",
+    "noFolders": "Create a first folder"
+  },
+  "granularity": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "year": "Year",
+    "all": "All"
+  },
+  "auth": {
+    "emailPlaceholder": "you@example.com",
+    "emailLabel": "Email",
+    "heading": "Sign in / create an account",
+    "genericError": "Something went wrong. Try again.",
+    "magicLinkPrompt": "Enter your email. You'll receive a sign-in link.",
+    "sendLink": "Send the link",
+    "sendingLink": "Sending…",
+    "linkSentTitle": "Link sent",
+    "linkSentBody": "Open the message sent to {email} and click the link to sign in. It expires in one hour.",
+    "useAnotherEmail": "Use a different address",
+    "linkInvalid": "That link has expired or was already used. Request a new one."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We get back personally within 24 hours.",
+    "fieldName": "Name",
+    "fieldEmail": "Email",
+    "fieldMessage": "Message",
+    "submit": "Send",
+    "submitting": "Sending…",
+    "cancel": "Cancel",
+    "successTitle": "Thanks!",
+    "successBody": "We'll get back to you within 24 hours at the address you provided.",
+    "errorBody": "Sending failed. Try again, or write to us directly at mario@veilla.app.",
+    "rateLimited": "Too many requests. Try again in a few minutes.",
+    "consent": "By submitting this form, your information will be processed in accordance with our <link>Privacy Policy</link>.",
+    "messagePlaceholder": "We would like to see what Veilla could do for our use case."
+  },
+  "filters": {
+    "filter": "Filter",
+    "reset": "Clear all",
+    "groupBy": "Group by",
+    "noGrouping": "No grouping"
+  },
+  "prose": {
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "failed": "Saving failed. Your text is kept.",
+    "unsaved": "Unsaved changes"
+  },
+  "monitors": {
+    "title": "Monitors",
+    "count": "{n, plural, one {# monitor followed} other {# monitors followed}}",
+    "toCheck": "{n} to check",
+    "search": "Search a monitor, a URL, a query…",
+    "empty": "No monitor matches.",
+    "noneYet": "You don't follow any monitor yet.",
+    "never": "Never",
+    "noLang": "Unknown language",
+    "health": {
+      "ok": "Active",
+      "warn": "Unstable",
+      "error": "Failing"
+    },
+    "template": {
+      "rss": "RSS feed",
+      "google_news": "Google News"
+    },
+    "columns": {
+      "name": "Monitor",
+      "template": "Type",
+      "lang": "Language",
+      "items7d": "Articles, 7 d",
+      "lastItem": "Last article",
+      "health": "Status"
+    },
+    "detail": {
+      "tabs": {
+        "label": "Monitor sections",
+        "overview": "Overview",
+        "configuration": "Configuration",
+        "logs": "Log"
+      },
+      "overview": {
+        "items7d": "Articles, 7 days",
+        "runs24h": "Fetches, 24 h",
+        "successRate": "Success rate",
+        "failedRuns": "{n, plural, one {# failure} other {# failures}}",
+        "medianDuration": "Median duration",
+        "lastSuccess": "Last success",
+        "lastFailure": "Last failure",
+        "consecutiveFailures": "Consecutive failures",
+        "never": "Never",
+        "latestItems": "Latest articles",
+        "noItems": "No article over the last seven days."
+      },
+      "config": {
+        "template": "Type",
+        "query": "Query",
+        "url": "Fetched URL",
+        "lang": "Language",
+        "country": "Country",
+        "attribution": "Publisher",
+        "perArticle": "Resolved article by article",
+        "publisher": "The feed's publisher"
+      },
+      "logs": {
+        "when": "When",
+        "outcome": "Outcome",
+        "duration": "Duration",
+        "result": "Detail",
+        "empty": "No fetch over the last 24 hours.",
+        "unchanged": "Nothing new (304)",
+        "items": "{seen} articles read, {fresh} new",
+        "outcomes": {
+          "ok": "Fetched",
+          "not_modified": "Unchanged",
+          "failed": "Failed"
+        }
+      }
+    }
+  },
+  "signal": {
+    "verdicts": {
+      "kept": "Kept",
+      "dropped": "Dropped",
+      "not_judged": "Not judged",
+      "short": {
+        "kept": "✓",
+        "dropped": "–",
+        "not_judged": "○"
+      }
+    },
+    "agents": {
+      "title": "Agents",
+      "activeOf": "{active} active of {total}",
+      "create": "New agent",
+      "intro": "An agent reads the stories of your monitors and keeps the ones that answer its request, with the reason for its choice.",
+      "empty": "No agent yet. Create one to sort your stories.",
+      "paused": "Paused",
+      "scopeAll": "All monitors",
+      "scopeSome": "{n, plural, one {# monitor} other {# monitors}}",
+      "kept": "{n} kept",
+      "dropped": "{n} dropped",
+      "week": "over 7 d",
+      "lastKept": "Last kept {when}"
+    },
+    "agent": {
+      "active": "Active",
+      "paused": "Paused",
+      "pause": "Pause",
+      "resume": "Resume",
+      "tabs": {
+        "label": "Agent sections",
+        "kept": "Kept",
+        "configuration": "Configuration"
+      },
+      "kept7d": "Kept, 7 d",
+      "dropped7d": "Dropped, 7 d",
+      "keepRate": "Keep rate",
+      "noneKept": "Nothing kept over the last seven days.",
+      "seeDecision": "See the decision",
+      "config": {
+        "request": "Request",
+        "requestHint": "What the agent should keep, in plain words. It reads it with the context shared by every agent.",
+        "requestNote": "The next decisions will follow this text; past ones stay as they are.",
+        "scope": "Monitors read",
+        "scopeHint": "The stories the agent judges are those holding an article from these monitors.",
+        "scopeAll": "All my monitors, including ones followed later",
+        "scopeSome": "A selection ({n})",
+        "scopeSearch": "Search a monitor…",
+        "scopeNoMatch": "No monitor matches."
+      },
+      "delete": "Delete",
+      "confirmDelete": "Delete with its decisions",
+      "failed": "The action failed."
+    },
+    "context": {
+      "title": "Context",
+      "updated": "Edited {when}",
+      "intro": "Who you are and what matters to you. Every agent receives this text with its own request: what holds for all of them is written here, once.",
+      "label": "Reading context",
+      "hint": "Your beat, your audience, what you count as news. A few sentences are enough.",
+      "note": "The next decisions of every agent will follow this text.",
+      "placeholder": "I am a journalist…"
+    },
+    "decisions": {
+      "title": "Decisions",
+      "summary": "{n, plural, one {# story examined} other {# stories examined}}, {kept} kept by at least one agent",
+      "search": "Search a story, an article, a source…",
+      "filterAgent": "Agent",
+      "filterVerdict": "Verdict",
+      "empty": "No decision matches.",
+      "noneYet": "No decision yet.",
+      "newArticles": "{n, plural, one {# new article} other {# new articles}}",
+      "panel": {
+        "ariaLabel": "Decision details",
+        "story": "Story #{id}",
+        "input": "What the agent received",
+        "inputLabel": "Title",
+        "inputSynthesis": "Synthesis",
+        "inputArticles": "{n, plural, one {New article} other {New articles}}",
+        "inputAlreadyKept": "Already kept, for this reason",
+        "noAgent": "No active agent reads this story.",
+        "notJudged": {
+          "out_of_scope": "No article of this story comes from the monitors the agent reads.",
+          "pending": "Waiting: the agent will judge it on a coming pass, or once its daily budget allows.",
+          "budget": "Daily budget reached: the story had waited over 6 hours and was not judged."
+        },
+        "reason": "Reason",
+        "tokens": "{input} → {output} tokens"
+      },
+      "all": "All stories"
+    },
+    "newAgent": {
+      "title": "New agent",
+      "description": "A name, and what it should keep. It reads all your monitors; you can narrow that on its page. It watches from now on: its first decisions come with the next articles.",
+      "name": "Name",
+      "namePlaceholder": "Industrial decarbonisation",
+      "request": "Request",
+      "requestPlaceholder": "Decisions that commit European industry to decarbonising: investments with figures, plants, subsidies. No op-eds.",
+      "requestHint": "In plain words. Say what you do not want, too.",
+      "create": "Create agent",
+      "creating": "Creating…",
+      "failed": "Creating the agent failed."
+    },
+    "budget": {
+      "spent": "Daily budget reached ({used}/{budget})",
+      "skipped": "{n, plural, one {# story skipped} other {# stories skipped}} for lack of budget in 24 h",
+      "hint": "The newest stories go first; one that has waited over 6 hours is no longer judged. Narrow its monitors or sharpen its request so it judges fewer."
+    }
+  },
+  "connection": {
+    "connecting": "Connecting",
+    "connected": "Connected",
+    "disconnected": "Connection lost — reconnecting"
+  },
+  "appError": {
+    "title": "Something went wrong",
+    "body": "We couldn't load this page. The service may be waking up — try again in a moment.",
+    "retry": "Try again"
+  },
+  "noAccess": {
+    "noProfileTitle": "No profile linked",
+    "noProfileBody": "This account is signed in, but no user profile is attached to it.",
+    "signedInAs": "Signed in as <strong>{email}</strong>",
+    "noProfileHint": "Ask an admin to create your profile in<code>public.users</code>(or through the admin UI), then sign in again.",
+    "unavailableTitle": "Service unavailable",
+    "unavailableBody": "The backend isn't responding right now. Try again in a minute.",
+    "signOut": "Sign out",
+    "retry": "Try again"
+  },
+  "storyExport": {
+    "article": "Article: {time}",
+    "firstArticle": "First article: {time}",
+    "lastArticle": "Last article: {time}",
+    "sources": "Sources ({count, plural, one {# outlet} other {# outlets}})",
+    "recentUpdates": "Recent updates",
+    "sharedFrom": "Shared from"
+  }
+}

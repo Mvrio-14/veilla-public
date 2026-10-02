@@ -1,0 +1,22 @@
+Veilla — Copyright (c) 2026 Mario MELON
+All rights reserved.
+
+This source code is published so that it can be read: by a prospective
+employer, a collaborator, or anyone curious about how the product is
+built. Publishing it is not a licence to use it.
+
+You may read this code, clone the repository to read it locally, and
+quote short excerpts with attribution.
+
+Anything else — using, copying, modifying, redistributing, or running any
+part of it in a product or a service, commercial or not — requires
+written permission. Ask at mario@veilla.app and say what you would like
+to do. Reasonable requests are welcome, and answering is free.
+
+Dependencies installed from requirements.txt, requirements_dev.txt
+and webapp/package.json are not distributed here and keep the licences of
+their own publishers.
+
+This code is provided as is, without warranty of any kind, express or
+implied. The author is not liable for any claim or damage arising from
+its use.

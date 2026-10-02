@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Le Monde.fr - Actualités et Infos en France et dans le monde</title>
+    <language>fr</language>
+    <item>
+      <title><![CDATA[Budget 2027 : le gouvernement présente un succ&egrave;s]]></title>
+      <link>https://www.lemonde.fr/politique/article/2026/09/28/budget-2027_1.html</link>
+      <guid>https://www.lemonde.fr/politique/article/2026/09/28/budget-2027_1.html</guid>
+      <description><![CDATA[<p>Le projet de loi de finances est <b>présenté</b> ce lundi.</p>]]></description>
+      <pubDate>Mon, 28 Sep 2026 08:00:00 +0200</pubDate>
+      <media:content url="https://img.lemonde.fr/budget.jpg" type="image/jpeg"/>
+      <category>Politique</category>
+    </item>
+    <item>
+      <title>Sans lien</title>
+      <description>Une entrée sans lien est ignorée.</description>
+    </item>
+    <item>
+      <title>Grève dans les transports</title>
+      <link>https://www.lemonde.fr/societe/article/2026/09/28/greve_2.html</link>
+      <pubDate>Mon, 28 Sep 2026 07:30:00 +0200</pubDate>
+      <surtitre>Social</surtitre>
+      <frobnicate>inconnu</frobnicate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Data (generated — not versioned)
+data/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# External benchmark repos cloned for local evaluation — not versioned
+benchmark_projects/SCStory/
+benchmark_projects/USTORY/
+benchmark_projects/multilingual-matryoshka-news/

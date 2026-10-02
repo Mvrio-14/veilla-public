@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Veilla">
+  <!--
+    The mark alone, no ground, so the tab shows the logo rather than a
+    badge containing it.
+
+    The colour is not fixed. A transparent icon takes the colour of
+    whatever the browser paints behind it, and a black mark on a dark tab
+    strip is invisible — which is what Chrome and Firefox show in their
+    dark theme. An SVG favicon can answer that itself: the rule below
+    flips the fill to cream when the browser chrome is dark, so the mark
+    stays legible without needing a plate behind it.
+
+    Delete the @media block for a mark that is black everywhere.
+  -->
+  <style>
+    .mark { fill: #171717; }
+    @media (prefers-color-scheme: dark) { .mark { fill: #F2F1EE; } }
+  </style>
+  <g class="mark" transform="translate(1 12.625) scale(0.484375)">
+    <path d="M4 52C12 19 34 4 64 4s52 15 60 48c-17-17-37-25-60-25S21 35 4 52Z"/>
+    <path d="M39 49c8-5 16-7 25-7 10 0 19 4 27 12-8 10-17 15-27 15-11 0-20-7-25-20Z"/>
+  </g>
+</svg>

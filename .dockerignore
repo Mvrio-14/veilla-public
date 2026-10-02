@@ -1,0 +1,28 @@
+# Don't ship local dev junk into the Docker image.
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.github/
+.vscode/
+.idea/
+
+# Project-specific
+notebooks/
+docs/
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets — must never be in image
+.env
+.env.*
+
+# Misc
+*.log
+*.md
+LICENSE

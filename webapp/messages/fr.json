@@ -1,0 +1,760 @@
+{
+  "landing": {
+    "nav": {
+      "signin": "Se connecter",
+      "trial": "Essayer Desk"
+    },
+    "hero": {
+      "h1": "Rendez votre temps au journalisme.",
+      "sub": "Veille augmentée par l'IA pour les rédactions.",
+      "ctaPrimary": "Essayer Desk",
+      "ctaGhost": "Se connecter"
+    },
+    "figures": {
+      "sources": "Sources",
+      "countries": "Pays",
+      "languages": "Langues",
+      "published": "Publications suivies par jour"
+    },
+    "core": {
+      "lead": "Collectez en continu",
+      "sources": "articles, communiqués de presse, annonces publiques, textes réglementaires, études et statistiques, posts, bien plus",
+      "pick": "Sélectionnez des sources et ajoutez les vôtres.",
+      "mid": "Tout est",
+      "verbs": "analysé, enrichi et regroupé"
+    },
+    "platform": {
+      "title": "Une plateforme, deux produits",
+      "sub": "Deux façons de travailler avec l'information.",
+      "news": {
+        "name": "Desk",
+        "body": "Un espace de travail collaboratif qui rassemble toutes vos sources. Vous pouvez explorer, filtrer et organiser les sujets en temps réel.",
+        "cta": "Essayer Desk"
+      },
+      "signal": {
+        "name": "Signal",
+        "body": "Des agents IA surveillent en continu les flux d'information pour vous. Ils raisonnent avec votre contexte et vos préférences, et vous délivrent l'information qui compte pour vous. Signal s'intègre directement aux outils que vous utilisez au quotidien.",
+        "cta": "Nous contacter",
+        "steps": {
+          "ingest": "Ingestion",
+          "reason": "Raisonnement",
+          "act": "Action"
+        }
+      }
+    },
+    "partners": {
+      "title": "Nous voulons façonner un avenir où les journalistes passent plus de temps à",
+      "titleAccent": "apporter de la valeur.",
+      "lead": "Nous cherchons des rédactions pour travailler avec nous et construire ensemble l'avenir de la plateforme.",
+      "cta": "Nous contacter"
+    },
+    "finalCta": {
+      "title": "Optimisez votre veille éditoriale",
+      "sub": "La démo gratuite de Desk porte sur un ensemble de sources défini. Contactez-nous pour ajouter les vôtres.",
+      "cardTrial": "Essayer Desk",
+      "cardContact": "Nous contacter"
+    },
+    "footer": {
+      "colProduct": "Produits",
+      "colCompany": "Entreprise",
+      "colLegal": "Légal",
+      "links": {
+        "desk": "Desk",
+        "signal": "Signal",
+        "partners": "Design partners",
+        "contact": "Nous contacter",
+        "email": "mario@veilla.app",
+        "privacy": "Politique de confidentialité",
+        "legalNotice": "Mentions légales"
+      },
+      "copy": "© 2026 Veilla · Tous droits réservés",
+      "hosting": "Toutes les données hébergées en Europe"
+    },
+    "lang": {
+      "toggle": "Changer de langue"
+    }
+  },
+  "legal": {
+    "copy": "© 2026 Veilla · Tous droits réservés"
+  },
+  "common": {
+    "search": "Rechercher…",
+    "clear": "Effacer",
+    "close": "Fermer",
+    "tagInputHint": "Entrée pour ajouter",
+    "removeItem": "Retirer {name}",
+    "back": "Retour"
+  },
+  "multiSelect": {
+    "allLabel": "Tous",
+    "nSelected": "{count, plural, one {# sélectionné} other {# sélectionnés}}",
+    "selectAll": "Tout sélectionner",
+    "clearAll": "Tout désélectionner",
+    "searchPlaceholder": "Rechercher…",
+    "noResults": "Aucun résultat",
+    "removeItem": "Retirer {name}"
+  },
+  "loading": {
+    "default": "Chargement…"
+  },
+  "nav": {
+    "watch": "Watch",
+    "library": "Sauvegardés",
+    "settings": "Paramètres",
+    "primaryAriaLabel": "Navigation principale",
+    "desk": "Desk",
+    "signal": "Signal",
+    "agents": "Agents",
+    "context": "Contexte",
+    "decisions": "Décisions",
+    "monitors": "Monitors",
+    "toolSwitchAriaLabel": "Outil",
+    "groups": {
+      "consult": "Consulter",
+      "configure": "Configurer"
+    },
+    "switchTo": "Passer à {tool}"
+  },
+  "rail": {
+    "collapseSidebar": "Réduire le panneau",
+    "expandSidebar": "Afficher le panneau"
+  },
+  "foldersView": {
+    "emptyFolder": "Ce dossier est vide. Ajoute une story depuis le Watch via l'icône dossier."
+  },
+  "topbar": {
+    "notifications": "Notifications — bientôt"
+  },
+  "userMenu": {
+    "signIn": "Se connecter",
+    "signedInAs": "Connecté en tant que",
+    "settings": "Paramètres",
+    "signOut": "Se déconnecter",
+    "account": "Compte",
+    "openAccountMenu": "Ouvrir le menu compte",
+    "language": "Langue",
+    "contact": "Contacter l'équipe"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Les stories que tu suis.",
+    "empty": "Aucune notification pour l'instant.",
+    "clearAll": "Tout effacer",
+    "clearAllConfirmTitle": "Vider la boîte de réception ?",
+    "clearAllConfirmBody": "{count, plural, =0 {Rien à effacer.} one {# notification sera supprimée définitivement.} other {# notifications seront supprimées définitivement.}}",
+    "clearAllCancel": "Annuler",
+    "clearAllConfirm": "Tout effacer",
+    "loadMore": "Voir plus",
+    "loading": "Chargement…",
+    "unreadCount": "{count, plural, one {# notification non lue} other {# notifications non lues}}",
+    "noUnread": "Notifications",
+    "genericStory": "une story",
+    "rowStoryUpdate": "Nouvelle mise à jour : {story}",
+    "rowStoryNewArticle": "Nouvel article : {story}",
+    "rowGeneric": "Nouvelle notification"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "sectionsAriaLabel": "Sections des paramètres",
+    "comingSoon": "Bientôt disponible.",
+    "tabs": {
+      "preferences": "Préférences",
+      "notifications": "Notifications",
+      "profile": "Profil"
+    },
+    "preferences": {
+      "title": "Préférences de lecture",
+      "intro": "Définis ton scope éditorial. Veilla appliquera ces filtres par défaut à ta Watch. Les vues sauvegardées ignorent ces préférences.",
+      "timeWindow": {
+        "label": "Fenêtre temporelle",
+        "hint": "Articles plus anciens masqués dans ta Watch. Choisis un preset ou saisis une valeur en heures (1–168).",
+        "unit": "h",
+        "ariaLabel": "Fenêtre temporelle en heures",
+        "viewPresets": "Voir les presets",
+        "h6": "6 heures",
+        "h12": "12 heures",
+        "h24": "24 heures",
+        "h48": "48 heures",
+        "h72": "72 heures",
+        "h168": "7 jours (168 h)"
+      },
+      "categories": {
+        "label": "Catégories à suivre",
+        "hint": "Vide = toutes les catégories. Sélectionne celles qui doivent apparaître dans ta Watch.",
+        "ariaLabel": "Catégories à suivre"
+      },
+      "articleTypes": {
+        "label": "Types d'articles à suivre",
+        "hint": "Vide = tous les types. Sélectionne ceux qui doivent apparaître (news, analyse, opinion…).",
+        "ariaLabel": "Types d'articles à suivre",
+        "news": "Actualité",
+        "feature": "Analyse",
+        "opinion": "Opinion",
+        "interview": "Interview",
+        "recap": "Récap",
+        "multimedia": "Multimédia",
+        "institutional": "Institutionnel"
+      },
+      "places": {
+        "label": "Pays et régions à suivre",
+        "hint": "Vide = aucun filtre géographique. Sélectionne les pays ou régions qui doivent apparaître dans ta Watch.",
+        "ariaLabel": "Pays et régions à suivre"
+      },
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "reset": "Réinitialiser aux défauts",
+      "saved": "Préférences enregistrées",
+      "saveError": "Échec de l'enregistrement",
+      "unsavedHint": "Modifications non enregistrées"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "intro": "Choisis pour chaque type de notification les canaux de réception. Si les deux sont décochés, le type est complètement muet.",
+      "typeColumn": "Type",
+      "inAppColumn": "Dans l'app",
+      "emailColumn": "Email",
+      "mutedHint": "Désactivé sur tous les canaux.",
+      "storyFollowIncludeArticles": "Notifier aussi les nouveaux articles",
+      "storyFollowIncludeArticlesHint": "Par défaut, tu reçois uniquement les mises à jour (= synthèses des évolutions significatives). Coche pour être notifié à chaque article qui rejoint une story que tu suis.",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "saved": "Préférences enregistrées",
+      "saveError": "Échec de l'enregistrement",
+      "unsavedHint": "Modifications non enregistrées",
+      "group": {
+        "story_follow": {
+          "label": "Stories suivies",
+          "hint": "Quand un nouvel article ou une mise à jour arrive sur une story que tu suis (bouton cloche).",
+          "ariaInApp": "Notifications stories — dans l'app",
+          "ariaEmail": "Notifications stories — email"
+        }
+      }
+    },
+    "profile": {
+      "title": "Profil",
+      "comingSoon": "Modification du nom, email, mot de passe — bientôt."
+    }
+  },
+  "themeToggle": {
+    "switchToLight": "Passer en mode clair",
+    "switchToDark": "Passer en mode sombre"
+  },
+  "sidebar": {
+    "sectionViews": "Vues",
+    "sectionMyViews": "Mes vues",
+    "sectionExplore": "Explorer",
+    "newView": "Nouvelle vue",
+    "editView": "Modifier la vue",
+    "noViewsYet": "Aucune vue pour l'instant",
+    "newFolder": "Nouveau dossier",
+    "all": "Tout",
+    "unread": "Non lus",
+    "saved": "Sauvegardés",
+    "ignored": "Ignorées",
+    "topics": "Sujets",
+    "persons": "Personnes",
+    "organizations": "Organisations",
+    "places": "Lieux mentionnés",
+    "events": "Évènements",
+    "markets": "Marchés",
+    "products": "Produits",
+    "subjectCountries": "Pays concernés",
+    "origin": "Origine",
+    "languages": "Langues",
+    "feeds": "Feeds",
+    "topStories": "À la une",
+    "signInToFilterUnread": "Connecte-toi à ton watch pour filtrer les non lus",
+    "signInToFilterSaved": "Connecte-toi à ton watch pour filtrer les sauvegardés",
+    "signInToFilterTop": "Connecte-toi à ton watch pour voir À la une",
+    "signInToViewIgnored": "Connecte-toi à ton watch pour voir les ignorées",
+    "viewUnread": "Voir les non-lues",
+    "viewSaved": "Voir les stories sauvegardées",
+    "viewTopStories": "Stories les plus reprises (triées par nombre de sources)",
+    "noSavedYet": "Aucune story sauvegardée pour l'instant",
+    "noTopYet": "Aucune story multi-sources pour l'instant",
+    "viewIgnoredAction": "Voir les stories ignorées",
+    "backToNormal": "Revenir à la vue normale",
+    "noIgnoredYet": "Aucune story ignorée pour l'instant"
+  },
+  "list": {
+    "stories": "Stories",
+    "tabAll": "Tous",
+    "tabCommon": "Communs",
+    "tabOriginal": "Originaux",
+    "commonHint": "Repris par 2+ médias",
+    "originalHint": "1 source unique",
+    "filters": "Filtres",
+    "advancedFilters": "Filtres avancés (cumulables)",
+    "search": "Rechercher…",
+    "noResultsFiltered": "Aucune story ne correspond aux filtres.",
+    "noResultsWindow": "Aucune story sur la fenêtre courante.",
+    "resetToShowAll": "Réinitialiser pour tout afficher",
+    "tryAgainLater": "Réessayer dans quelques minutes",
+    "lastUpdated": "Mis à jour {time}",
+    "lastUpdatedTooltip": "Dernière vérification à {time}",
+    "viewKind": "Vue",
+    "editView": "Modifier la vue",
+    "markAll": {
+      "button": "Tout marquer comme lu",
+      "tooltip": "Marquer toutes les stories du fil comme lues",
+      "confirmTitle": "Tout marquer comme lu ?",
+      "confirmBody": "{count, plural, =0 {Aucune story non lue.} one {# story non lue sera marquée comme lue, sur tout le fil (filtre actif ignoré).} other {# stories non lues seront marquées comme lues, sur tout le fil (filtre actif ignoré).}}",
+      "cancel": "Annuler",
+      "confirm": "Tout marquer comme lu"
+    },
+    "allCaughtUp": "Vous avez tout vu"
+  },
+  "period": {
+    "tooltip": "Période de veille — s'applique à la liste et aux compteurs de vues",
+    "period1h": "1 h",
+    "period6h": "6 h",
+    "period24h": "24 h",
+    "period3d": "3 j",
+    "period7d": "7 j",
+    "period14d": "14 j"
+  },
+  "viewDialog": {
+    "createTitle": "Nouvelle vue",
+    "editTitle": "Modifier la vue",
+    "description": "Une vue est un ensemble de critères de filtres sauvegardés. Les stories qui matchent apparaissent automatiquement.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Ex : Actu IA",
+    "create": "Créer la vue",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer la vue"
+  },
+  "folderDialog": {
+    "createTitle": "Nouveau dossier",
+    "editTitle": "Renommer le dossier",
+    "description": "Un dossier est une collection de stories que tu sauves ensemble. Tu y ajoutes les stories explicitement depuis ton Watch.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Ex : Story Trump",
+    "create": "Créer le dossier",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer le dossier",
+    "deleteConfirmTitle": "Supprimer le dossier « {name} » ?",
+    "deleteConfirmBody": "{count, plural, =0 {Les stories qu'il contient resteront} one {La 1 story qu'il contient restera} other {Les # stories qu'il contient resteront}} dans tes sauvegardes — seul le dossier disparaît.",
+    "deleteConfirmCancel": "Annuler",
+    "deleteConfirmConfirm": "Supprimer",
+    "nameTaken": "Un dossier porte déjà ce nom"
+  },
+  "folderPicker": {
+    "title": "Ajouter à un dossier",
+    "empty": "Tu n'as pas encore de dossier",
+    "createInline": "Nouveau dossier",
+    "createPlaceholder": "Nom du dossier",
+    "createCancel": "Annuler",
+    "createConfirm": "Créer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "close": "Fermer"
+  },
+  "filtersDialog": {
+    "title": "Filtres avancés",
+    "description": "Cumulable. Combinés en ET avec la sélection de la sidebar.",
+    "period": "Période",
+    "viewPresets": "Voir les presets",
+    "keywords": "Mots-clés",
+    "keywordsHint": "Tous les mots doivent apparaître dans la story",
+    "keywordsPlaceholder": "Ex. taux directeur, IA générative, élections…",
+    "categories": "Catégories",
+    "languages": "Langues",
+    "feeds": "Flux",
+    "feedsAvailable": "{count} flux disponibles",
+    "originLabel": "Origine de la source",
+    "originHint": "Pays où la source publie (article.source_country)",
+    "subjectCountriesLabel": "Pays concernés",
+    "subjectCountriesHint": "Pays dont l'article parle (taggé par la normalisation). Idéal pour des alertes fiables.",
+    "places": "Lieux mentionnés",
+    "placesHint": "Mentions libres de lieux (villes, monuments, sous-régions…). Bruité par l'extraction d'entités — préférer « Pays concernés » pour les pays.",
+    "placesPlaceholder": "Filtrer les lieux…",
+    "country": "Pays",
+    "place": "Lieu",
+    "persons": "Personnes",
+    "personsPlaceholder": "Filtrer les personnes…",
+    "organizations": "Organisations",
+    "organizationsPlaceholder": "Filtrer les organisations…",
+    "events": "Évènements",
+    "eventsPlaceholder": "Filtrer les évènements…",
+    "markets": "Marchés",
+    "marketsPlaceholder": "Filtrer les marchés…",
+    "products": "Produits",
+    "productsPlaceholder": "Filtrer les produits…",
+    "clearAll": "Tout effacer",
+    "restorePrefs": "Mes préférences",
+    "restorePrefsHint": "Restaurer mes préférences par défaut (Settings → Préférences)",
+    "cancel": "Annuler",
+    "apply": "Appliquer",
+    "noAdvancedFilter": "Aucun filtre avancé",
+    "advancedFilterCount": "{count, plural, one {# filtre avancé} other {# filtres avancés}}",
+    "noResults": "Aucun résultat",
+    "exclusionsHeader": "Exclusions",
+    "exclusionsHint": "Articles à masquer (vient de tes préférences par défaut, modifiable pour cette session)",
+    "articleTypes": "Types d'articles",
+    "excludedCategories": "Catégories exclues",
+    "excludedArticleTypes": "Types exclus",
+    "excludedKeywords": "Mots-clés exclus",
+    "excludedKeywordsPlaceholder": "Ex. recap, opinion, sponsorisé…",
+    "articleTypeLabels": {
+      "news": "Actualité",
+      "feature": "Analyse",
+      "opinion": "Opinion",
+      "interview": "Interview",
+      "recap": "Récap",
+      "multimedia": "Multimédia",
+      "institutional": "Institutionnel"
+    },
+    "categoryLabels": {
+      "Domestic Politics": "Politique intérieure",
+      "Geopolitics & Conflicts": "Géopolitique & conflits",
+      "Justice & Legal Affairs": "Justice & affaires juridiques",
+      "Crime & Public Safety": "Faits divers & sécurité",
+      "Economy": "Économie",
+      "Finance & Markets": "Finance & marchés",
+      "Business & Industry": "Entreprises & industrie",
+      "Energy & Climate": "Énergie & climat",
+      "Technology & AI": "Tech & IA",
+      "Science": "Sciences",
+      "Health": "Santé",
+      "Society & Labour": "Société & travail",
+      "Education": "Éducation",
+      "Media & Culture": "Médias & culture",
+      "Sport": "Sport",
+      "Other": "Autre"
+    }
+  },
+  "cluster": {
+    "sourceLabel": "{count, plural, one {source} other {sources}}",
+    "articleLabel": "{count, plural, one {article} other {articles}}",
+    "new": "Nouveau",
+    "newUpdate": "Nouvelle mise à jour",
+    "viewMore": "{count, plural, one {Voir 1 autre article} other {Voir les # autres articles}}",
+    "hideExtra": "Masquer"
+  },
+  "detail": {
+    "synthesis": "Synthèse",
+    "updates": "Mises à jour",
+    "updatesPlaceholder": "Timeline des faits saillants — bientôt.",
+    "firstArticle": "Premier article",
+    "lastArticle": "Dernier article",
+    "readArticle": "Lire l'article",
+    "copyLink": "Copier le lien",
+    "backToCluster": "Retour au cluster",
+    "showOriginal": "Voir l'original",
+    "showTranslation": "Voir la traduction",
+    "originalLanguage": "Langue originale : {language}",
+    "byline": "Par {names}",
+    "entities": "Entités",
+    "persons": "Personnes",
+    "orgs": "Organisations",
+    "locations": "Lieux",
+    "events": "Évènements",
+    "markets": "Marchés",
+    "products": "Produits",
+    "countries": "Pays",
+    "nArticles": "{count, plural, one {# article} other {# articles}}",
+    "statusActive": "active",
+    "statusClosed": "fermée",
+    "startedAge": "démarrée {age}"
+  },
+  "actions": {
+    "save": "Sauvegarder",
+    "unsave": "Retirer la sauvegarde",
+    "folders": "Ajouter à un dossier",
+    "removeFromFolder": "Retirer de ce dossier",
+    "follow": "Suivre cette story",
+    "unfollow": "Ne plus suivre",
+    "share": "Partager",
+    "copied": "Copié dans le presse-papier",
+    "copyFailed": "Échec de la copie",
+    "ignore": "Ignorer cette story",
+    "restore": "Restaurer cette story",
+    "demoOnly": "indisponible en démo"
+  },
+  "library": {
+    "title": "Bookmarks",
+    "saves": "{count, plural, one {# sauvegarde} other {# sauvegardes}}",
+    "results": "{count, plural, one {# résultat} other {# résultats}}",
+    "search": "Rechercher…",
+    "emptyTitle": "Aucune sauvegarde pour l'instant.",
+    "emptyDescription": "Quand tu sauvegardes une story depuis ton watch, elle apparaît ici — accessible n'importe quand, sans limite de date.",
+    "goToWatch": "Aller à mon watch →",
+    "noResultsSearching": "Aucune sauvegarde ne correspond à ta recherche.",
+    "refineSearch": "Affine ou efface ta recherche",
+    "viewAll": "Toutes les vues",
+    "viewEmpty": "Aucune vue — crées-en une depuis Watch",
+    "noResultsFiltered": "Aucune sauvegarde ne correspond aux filtres actifs.",
+    "refineFilters": "Essaie d'enlever un filtre",
+    "confirmUnsaveTitle": "Retirer définitivement ?",
+    "confirmUnsaveDescription": "Cette story s'est fermée — une fois retirée de tes sauvegardes, le cleanup la supprimera sous deux semaines et tu ne pourras plus la retrouver. Pour les stories encore actives, tu peux toujours les re-sauvegarder depuis ton Watch.",
+    "confirmUnsaveCancel": "Annuler",
+    "confirmUnsaveConfirm": "Retirer quand même"
+  },
+  "libraryNav": {
+    "bookmarks": "Bookmarks",
+    "folders": "Dossiers",
+    "newFolder": "Nouveau dossier",
+    "noFolders": "Créer un premier dossier"
+  },
+  "granularity": {
+    "day": "Jour",
+    "week": "Semaine",
+    "month": "Mois",
+    "year": "Année",
+    "all": "Tout"
+  },
+  "auth": {
+    "emailPlaceholder": "toi@exemple.com",
+    "emailLabel": "E-mail",
+    "heading": "Se connecter / créer un compte",
+    "genericError": "Une erreur est survenue. Réessaye.",
+    "magicLinkPrompt": "Saisis ton adresse. Tu recevras un lien de connexion.",
+    "sendLink": "Recevoir le lien",
+    "sendingLink": "Envoi…",
+    "linkSentTitle": "Lien envoyé",
+    "linkSentBody": "Ouvre le message envoyé à {email} et clique sur le lien pour te connecter. Il expire dans une heure.",
+    "useAnotherEmail": "Utiliser une autre adresse",
+    "linkInvalid": "Ce lien a expiré ou a déjà été utilisé. Demandes-en un nouveau."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "On vous répond personnellement sous 24h.",
+    "fieldName": "Nom",
+    "fieldEmail": "Email",
+    "fieldMessage": "Message",
+    "submit": "Envoyer",
+    "submitting": "Envoi…",
+    "cancel": "Annuler",
+    "successTitle": "Merci !",
+    "successBody": "On revient vers vous sous 24h à l'adresse que vous avez donnée.",
+    "errorBody": "L'envoi a échoué. Réessayez ou écrivez-nous directement à mario@veilla.app.",
+    "rateLimited": "Trop de demandes. Patientez quelques minutes.",
+    "consent": "En soumettant ce formulaire, vos données seront traitées conformément à notre <link>Politique de confidentialité</link>.",
+    "messagePlaceholder": "Nous aimerions voir ce que Veilla pourrait faire pour notre cas d'usage."
+  },
+  "filters": {
+    "filter": "Filtrer",
+    "reset": "Tout effacer",
+    "groupBy": "Grouper par",
+    "noGrouping": "Aucun groupement"
+  },
+  "prose": {
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "saved": "Enregistré",
+    "failed": "Échec de l'enregistrement. Ton texte est conservé.",
+    "unsaved": "Modifications non enregistrées"
+  },
+  "monitors": {
+    "title": "Monitors",
+    "count": "{n, plural, one {# monitor suivi} other {# monitors suivis}}",
+    "toCheck": "{n} à vérifier",
+    "search": "Rechercher un monitor, une URL, une requête…",
+    "empty": "Aucun monitor ne correspond.",
+    "noneYet": "Tu ne suis encore aucun monitor.",
+    "never": "Jamais",
+    "noLang": "Langue inconnue",
+    "health": {
+      "ok": "Active",
+      "warn": "Instable",
+      "error": "En échec"
+    },
+    "template": {
+      "rss": "Flux RSS",
+      "google_news": "Google News"
+    },
+    "columns": {
+      "name": "Monitor",
+      "template": "Type",
+      "lang": "Langue",
+      "items7d": "Articles, 7 j",
+      "lastItem": "Dernier article",
+      "health": "État"
+    },
+    "detail": {
+      "tabs": {
+        "label": "Sections du monitor",
+        "overview": "Vue d'ensemble",
+        "configuration": "Configuration",
+        "logs": "Journal"
+      },
+      "overview": {
+        "items7d": "Articles, 7 jours",
+        "runs24h": "Récupérations, 24 h",
+        "successRate": "Taux de succès",
+        "failedRuns": "{n, plural, one {# échec} other {# échecs}}",
+        "medianDuration": "Durée médiane",
+        "lastSuccess": "Dernier succès",
+        "lastFailure": "Dernier échec",
+        "consecutiveFailures": "Échecs consécutifs",
+        "never": "Jamais",
+        "latestItems": "Derniers articles",
+        "noItems": "Aucun article sur les sept derniers jours."
+      },
+      "config": {
+        "template": "Type",
+        "query": "Requête",
+        "url": "URL récupérée",
+        "lang": "Langue",
+        "country": "Pays",
+        "attribution": "Éditeur",
+        "perArticle": "Résolu article par article",
+        "publisher": "L'éditeur du flux"
+      },
+      "logs": {
+        "when": "Quand",
+        "outcome": "Résultat",
+        "duration": "Durée",
+        "result": "Détail",
+        "empty": "Aucune récupération sur les dernières 24 heures.",
+        "unchanged": "Rien de nouveau (304)",
+        "items": "{seen} articles lus, {fresh} nouveaux",
+        "outcomes": {
+          "ok": "Récupéré",
+          "not_modified": "Inchangé",
+          "failed": "Échec"
+        }
+      }
+    }
+  },
+  "signal": {
+    "verdicts": {
+      "kept": "Retenu",
+      "dropped": "Écarté",
+      "not_judged": "Non jugé",
+      "short": {
+        "kept": "✓",
+        "dropped": "–",
+        "not_judged": "○"
+      }
+    },
+    "agents": {
+      "title": "Agents",
+      "activeOf": "{active} actifs sur {total}",
+      "create": "Nouvel agent",
+      "intro": "Un agent lit les stories de tes monitors et retient celles qui répondent à sa demande, avec la raison de son choix.",
+      "empty": "Aucun agent pour l'instant. Crée-en un pour qu'il trie tes stories.",
+      "paused": "En pause",
+      "scopeAll": "Tous les monitors",
+      "scopeSome": "{n, plural, one {# monitor} other {# monitors}}",
+      "kept": "{n, plural, one {# retenue} other {# retenues}}",
+      "dropped": "{n, plural, one {# écartée} other {# écartées}}",
+      "week": "sur 7 j",
+      "lastKept": "Dernière retenue {when}"
+    },
+    "agent": {
+      "active": "Actif",
+      "paused": "En pause",
+      "pause": "Mettre en pause",
+      "resume": "Reprendre",
+      "tabs": {
+        "label": "Sections de l'agent",
+        "kept": "Retenues",
+        "configuration": "Configuration"
+      },
+      "kept7d": "Retenues, 7 j",
+      "dropped7d": "Écartées, 7 j",
+      "keepRate": "Taux de rétention",
+      "noneKept": "Rien de retenu sur les sept derniers jours.",
+      "seeDecision": "Voir la décision",
+      "config": {
+        "request": "Demande",
+        "requestHint": "Ce que l'agent doit retenir, en langage courant. Il la lit avec le contexte commun à tous les agents.",
+        "requestNote": "Les prochaines décisions suivront ce texte ; les précédentes restent telles quelles.",
+        "scope": "Monitors lus",
+        "scopeHint": "Les stories que l'agent juge sont celles qui contiennent un article de ces monitors.",
+        "scopeAll": "Tous mes monitors, y compris ceux suivis plus tard",
+        "scopeSome": "Une sélection ({n})",
+        "scopeSearch": "Rechercher un monitor…",
+        "scopeNoMatch": "Aucun monitor ne correspond."
+      },
+      "delete": "Supprimer",
+      "confirmDelete": "Supprimer avec ses décisions",
+      "failed": "L'action a échoué."
+    },
+    "context": {
+      "title": "Contexte",
+      "updated": "Modifié {when}",
+      "intro": "Qui tu es et ce qui compte pour toi. Chaque agent reçoit ce texte avec sa propre demande : ce qui vaut pour tous s'écrit ici une seule fois.",
+      "label": "Contexte de lecture",
+      "hint": "Ton métier, ton audience, ce que tu considères comme une information. Quelques phrases suffisent.",
+      "note": "Les prochaines décisions de tous les agents suivront ce texte.",
+      "placeholder": "Je suis journaliste…"
+    },
+    "decisions": {
+      "title": "Décisions",
+      "summary": "{n, plural, one {# story examinée} other {# stories examinées}}, {kept, plural, one {# retenue} other {# retenues}} par au moins un agent",
+      "search": "Rechercher une story, un article, une source…",
+      "filterAgent": "Agent",
+      "filterVerdict": "Verdict",
+      "empty": "Aucune décision ne correspond.",
+      "noneYet": "Aucune décision pour l'instant.",
+      "newArticles": "{n, plural, one {# nouvel article} other {# nouveaux articles}}",
+      "panel": {
+        "ariaLabel": "Détail des décisions",
+        "story": "Story #{id}",
+        "input": "Ce que l'agent a reçu",
+        "inputLabel": "Titre",
+        "inputSynthesis": "Synthèse",
+        "inputArticles": "{n, plural, one {Nouvel article} other {Nouveaux articles}}",
+        "inputAlreadyKept": "Déjà retenue, pour cette raison",
+        "noAgent": "Aucun agent actif ne lit cette story.",
+        "notJudged": {
+          "out_of_scope": "Aucun article de cette story ne vient des monitors que l'agent lit.",
+          "pending": "En attente : l'agent la jugera à un prochain passage, ou quand son budget du jour le permettra.",
+          "budget": "Budget du jour atteint : la story attendait depuis plus de 6 h, elle n'a pas été jugée."
+        },
+        "reason": "Raison",
+        "tokens": "{input} → {output} tokens"
+      },
+      "all": "Toutes les stories"
+    },
+    "newAgent": {
+      "title": "Nouvel agent",
+      "description": "Un nom, et ce qu'il doit retenir. Il lit tous tes monitors ; tu pourras restreindre sa lecture sur sa page. Il surveille à partir de maintenant : ses premières décisions arrivent avec les prochains articles.",
+      "name": "Nom",
+      "namePlaceholder": "Industrie et décarbonation",
+      "request": "Demande",
+      "requestPlaceholder": "Les décisions qui engagent la décarbonation de l'industrie en Europe : investissements chiffrés, usines, subventions. Pas les tribunes.",
+      "requestHint": "En langage courant. Dis aussi ce que tu ne veux pas.",
+      "create": "Créer l'agent",
+      "creating": "Création…",
+      "failed": "La création a échoué."
+    },
+    "budget": {
+      "spent": "Budget du jour atteint ({used}/{budget})",
+      "skipped": "{n, plural, one {# story écartée} other {# stories écartées}} faute de budget sur 24 h",
+      "hint": "Les stories les plus récentes passent d'abord ; au-delà de 6 h d'attente, une story n'est plus jugée. Restreins ses monitors ou précise sa demande pour qu'il en juge moins."
+    }
+  },
+  "connection": {
+    "connecting": "Connexion en cours",
+    "connected": "Connecté",
+    "disconnected": "Connexion perdue — reconnexion en cours"
+  },
+  "appError": {
+    "title": "Une erreur est survenue",
+    "body": "Impossible de charger cette page. Le service est peut-être en train de redémarrer — réessaie dans un instant.",
+    "retry": "Réessayer"
+  },
+  "noAccess": {
+    "noProfileTitle": "Aucun profil associé",
+    "noProfileBody": "Ce compte est bien authentifié mais aucun profil utilisateur ne lui est rattaché.",
+    "signedInAs": "Connecté en tant que <strong>{email}</strong>",
+    "noProfileHint": "Demande à un admin de créer ton profil dans<code>public.users</code>(ou via l'UI admin), puis re-connecte-toi.",
+    "unavailableTitle": "Service indisponible",
+    "unavailableBody": "Le backend ne répond pas pour l'instant. Réessaie dans une minute.",
+    "signOut": "Se déconnecter",
+    "retry": "Réessayer"
+  },
+  "storyExport": {
+    "article": "Article : {time}",
+    "firstArticle": "Premier article : {time}",
+    "lastArticle": "Dernier article : {time}",
+    "sources": "Sources ({count, plural, one {# média} other {# médias}})",
+    "recentUpdates": "Mises à jour récentes",
+    "sharedFrom": "Partagé depuis"
+  }
+}

@@ -1,0 +1,2787 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Veilla — Design tokens (light)
+   The single source of the palette: every colour below is exposed
+   to Tailwind through the @theme block further down.
+   ============================================================ */
+
+:root {
+  /* Backgrounds — warm clean neutrals */
+  --bg:        #fbfbfa;
+  --bg-elev:   #ffffff;
+  --bg-sub:    #f4f4f2;
+  --bg-hover:  #efefec;
+  --bg-active: #e8e8e4;
+
+  /* Borders */
+  --border-strong: #d4d4cf;
+
+  /* Text */
+  --text:   #18181b;
+  --text-2: #52525b;
+  --text-3: #8a8a93;
+  --text-4: #b4b4ba;
+
+  /* Brand & state accents */
+  --accent-soft:    oklch(0.94 0.04 255);
+  --accent-text:    oklch(0.45 0.18 255);
+
+  --priority:       oklch(0.7  0.16 60);
+  --priority-soft:  oklch(0.96 0.05 75);
+  --priority-text:  oklch(0.5  0.16 55);
+
+  --new:            oklch(0.62 0.16 230);
+  --new-soft:       oklch(0.96 0.04 230);
+  --new-text:       oklch(0.48 0.18 230);
+
+  --hot:            oklch(0.62 0.2  25);
+  --hot-soft:       oklch(0.96 0.05 25);
+  --hot-text:       oklch(0.5  0.2  25);
+
+  --good:           oklch(0.62 0.13 145);
+
+  --bookmark:       oklch(0.78 0.13 90);
+  --bookmark-soft:  oklch(0.97 0.04 90);
+  --bookmark-text:  oklch(0.55 0.13 85);
+
+  /* shadcn-flavoured tokens (kept for shadcn primitives) */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.58 0.15 255);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e5e5e1;
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --bg:        #191919;
+  --bg-elev:   #202020;
+  --bg-sub:    #1c1c1c;
+  --bg-hover:  #2a2a2a;
+  --bg-active: #323232;
+
+  --border-strong: #3a3a3a;
+
+  --text:   #ededec;
+  --text-2: #a8a8a3;
+  --text-3: #7d7d76;
+  --text-4: #565651;
+
+  --new:            #53b4e4;
+  --new-soft:       rgba(83,180,228,0.16);
+  --new-text:       #7cc8ee;
+
+  --priority:       #f39c2e;
+  --priority-soft:  rgba(243,156,46,0.14);
+  --priority-text:  #f5b25a;
+
+  --bookmark:       #f4c542;
+  --bookmark-soft:  rgba(244,197,66,0.18);
+  --bookmark-text:  #f4c542;
+
+  --hot:            #ef5a5a;
+  --hot-soft:       rgba(239,90,90,0.16);
+  --hot-text:       #ff7b7b;
+
+  --good:           #3aaa7a;
+
+  --accent-soft:    rgba(83,180,228,0.16);
+  --accent-text:    #7cc8ee;
+
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: #53b4e4;
+  --accent-foreground: #fff;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #2e2e2e;
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}
+
+/* ============================================================
+   Tailwind utility exposure
+   ============================================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-sans);
+  /* Poppins — the wordmark alone ("VEILLA", beside the eye). Uppercase and
+   * wide-tracked; surfaced as the `font-wordmark` Tailwind utility. */
+  --font-wordmark: var(--font-wordmark);
+  /* Jost — now only the legal pages and the login headline. The landing
+   * moved off it; it is kept for those two and nothing else. */
+  --font-display: var(--font-display);
+  /* Newsreader — the landing's one expressive face, surfaced as the
+   * `font-accent` utility. It was reached only through hand-written CSS
+   * until the hero and the figures needed it too. */
+  --font-accent: var(--font-accent);
+  /* Plus Jakarta Sans — the landing's large text, as `font-title`. Inter
+   * stays on the body and the interface. */
+  --font-title: var(--font-title);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Veilla design tokens — exposed as Tailwind utility colors */
+  --color-bg:             var(--bg);
+  --color-bg-elev:        var(--bg-elev);
+  --color-bg-sub:         var(--bg-sub);
+  --color-bg-hover:       var(--bg-hover);
+  --color-bg-active:      var(--bg-active);
+  --color-border-strong:  var(--border-strong);
+  --color-text:           var(--text);
+  --color-text-2:         var(--text-2);
+  --color-text-3:         var(--text-3);
+  --color-text-4:         var(--text-4);
+  --color-accent-soft:    var(--accent-soft);
+  --color-accent-text:    var(--accent-text);
+  --color-priority:       var(--priority);
+  --color-priority-soft:  var(--priority-soft);
+  --color-priority-text:  var(--priority-text);
+  --color-new:            var(--new);
+  --color-new-soft:       var(--new-soft);
+  --color-new-text:       var(--new-text);
+  --color-hot:            var(--hot);
+  --color-hot-soft:       var(--hot-soft);
+  --color-hot-text:       var(--hot-text);
+  --color-good:           var(--good);
+  --color-bookmark:       var(--bookmark);
+  --color-bookmark-soft:  var(--bookmark-soft);
+  --color-bookmark-text:  var(--bookmark-text);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+}
+
+/* ============================================================
+   A few keyframes used by `animate-*` Tailwind utilities
+   (pulse-live, tooltip-fade, slide-in)
+   ============================================================ */
+
+@keyframes pulse-live {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--good) 60%, transparent); }
+  70%  { box-shadow: 0 0 0 5px color-mix(in oklab, var(--good) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--good) 0%, transparent); }
+}
+
+@keyframes tooltip-fade {
+  from { opacity: 0; transform: translateY(-2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* The sidebar's levels (components/app/app-sidebar.tsx): the one
+   entering slides from the right, the one returning from the left. */
+@keyframes sidebar-level-in {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes sidebar-level-out {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: none; }
+}
+.animate-sidebar-in  { animation: sidebar-level-in  0.46s cubic-bezier(0.32, 0.72, 0, 1); }
+.animate-sidebar-out { animation: sidebar-level-out 0.46s cubic-bezier(0.32, 0.72, 0, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sidebar-in,
+  .animate-sidebar-out { animation: none; }
+}
+
+/* Sidebar toggle — the filled inner column drains rather than the icon
+   being swapped for a different drawing, so the control reads as one
+   object changing state. */
+.sidebar-toggle-fill {
+  transform-origin: 6px 12px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+[aria-pressed="true"] .sidebar-toggle-fill {
+  opacity: 0;
+  transform: scaleX(0.2);
+}
+
+@keyframes slide-in-row {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   Skeleton shimmer — GitHub / Feedly / LinkedIn pattern. The
+   placeholder itself sits on a visible mid-grey base (--bg-hover
+   in light mode, the matching shade in dark mode). A translucent
+   highlight band slides over it through a pseudo-element, much
+   like a light reflection sweeping across the surface. Higher
+   contrast than the old `animate-pulse` opacity fade — the user
+   has a clear "this is loading" signal even at a glance.
+
+   Notes:
+     - `overflow: hidden` + `position: relative` on the host so
+       the ::after stays clipped to the rounded skeleton shape.
+     - 2s cycle with linear easing: slow enough to feel calm, fast
+       enough to read as "active".
+     - Highlight uses --text at low alpha via color-mix, which
+       adapts both light (= near-white band on grey) and dark
+       (= near-white band on darker grey) modes from the same
+       declaration. No mode-specific override needed.
+   ============================================================ */
+
+@keyframes shimmer-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-active);
+}
+
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Light mode: a translucent white band brightens the mid-grey
+     base wherever it passes, reading as a soft "light reflection".
+     60% alpha keeps the highlight clearly legible on the grey
+     surface without looking solid. */
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: shimmer-slide 2s linear infinite;
+}
+
+/* Dark mode: the same 60%-white band would explode visually
+   against a near-black base — the eye is more sensitive to bright
+   highlights on dark surfaces. Drop the alpha to ~10% so the
+   shimmer stays subtle, in line with Linear / GitHub dark-mode
+   skeletons. */
+.dark .skeleton-shimmer::after {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+}
+
+/* ============================================================
+   Subtle global scrollbar (must be outside @layer for ::-webkit-* pseudos)
+   ============================================================ */
+
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--text-4) 40%, transparent);
+  border-radius: 99px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklab, var(--text-4) 70%, transparent);
+  background-clip: padding-box;
+}
+
+/* ============================================================
+   Landing-page helpers — visual constructs too verbose in Tailwind:
+   - the macOS window chrome shadow stack
+   - the radial gradient lift behind the hero window
+   - the blackletter-V watermark on the final CTA card
+   - the pulsing green dot on the eyebrow
+   Component-scoped via `.landing-*` classnames so the rest of the
+   app is unaffected.
+   ============================================================ */
+
+/* Dark scrollbar, landing only.
+ *
+ * The dark part is the track — the band running down the edge of the
+ * window — with a lighter thumb riding in it. `scrollbar-color` takes
+ * them in that order: thumb first, track second.
+ *
+ * Scoped with `:has()` on the top bar, which exists nowhere else: the
+ * scrollbar belongs to the document, so styling it globally would drag a
+ * black stripe into the app's light theme too.
+ *
+ * `scrollbar-color` is the standard property; the WebKit pseudo-elements
+ * below cover the versions that predate it.
+ */
+:root:has(.landing-topbar) {
+  scrollbar-color: var(--text-3) var(--text);
+}
+
+:root:has(.landing-topbar)::-webkit-scrollbar {
+  width: 12px;
+}
+
+:root:has(.landing-topbar)::-webkit-scrollbar-track {
+  background-color: var(--text);
+}
+
+:root:has(.landing-topbar)::-webkit-scrollbar-thumb {
+  background-color: var(--text-3);
+  border-radius: 8px;
+}
+
+:root:has(.landing-topbar)::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-2);
+}
+
+/* Landing top bar — two states, no shape of its own.
+ *
+ * Over the hero it paints nothing: no fill, no blur, no border, no
+ * rounding. The photograph runs under it and the bar is simply white
+ * type on the image.
+ *
+ * Once the page has scrolled it fills. A translucent wash plus a
+ * backdrop blur is what makes it survive content passing underneath:
+ * the fill separates the two layers, and because it is translucent the
+ * page still tints it, so the bar takes the colour of whatever it is
+ * over instead of sitting on top as a foreign slab.
+ */
+.landing-topbar {
+  color: #fff;
+  background: transparent;
+  transition:
+    background-color 220ms ease,
+    backdrop-filter 220ms ease,
+    color 220ms ease;
+}
+
+.landing-topbar--scrolled {
+  color: var(--text);
+  /* No wash — the blur alone does the separating. It has nothing to work
+     with over a flat colour, so the bar reads as invisible above the
+     plain sections and only shows itself over the photograph or over
+     content passing beneath. */
+  background: transparent;
+  -webkit-backdrop-filter: saturate(140%) blur(28px);
+  backdrop-filter: saturate(140%) blur(28px);
+}
+
+/* The bar's call to action tracks the same two states. Over the
+ * photograph it is an outline — a filled button there would read as a
+ * slab dropped on the picture. Once the bar has a surface of its own the
+ * button fills, because that is where the action should carry weight. */
+.landing-topbar-cta {
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.landing-topbar--scrolled .landing-topbar-cta {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+/* And white again over the closing picture and the black below it. Same
+ * specificity as the rule above, so this has to come after it — the two
+ * classes are both on the bar at once, since the dark state keeps the
+ * blur the scrolled state brings. */
+.landing-topbar--dark {
+  color: #fff;
+  border-color: rgb(255 255 255 / 22%);
+}
+
+.landing-topbar--dark .landing-topbar-cta {
+  background: #fff;
+  border-color: #fff;
+  color: #0b0b0c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-topbar-cta {
+    transition: none;
+  }
+}
+
+/* Without backdrop-filter the wash alone has to do the separating, so it
+ * goes opaque rather than leaving the bar half see-through and unreadable. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .landing-topbar--scrolled {
+    background: var(--bg-elev);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-topbar {
+    transition: none;
+  }
+}
+
+/* ── Reveals ──────────────────────────────────────────────────────────
+ * Anything marked `data-reveal` starts a little low and invisible, and
+ * settles into place the first time it comes into view. `use-reveals.ts`
+ * decides when by setting `data-shown`; this decides what it looks like.
+ *
+ * The distance is deliberately small. A long travel reads as a thing
+ * flying in, which makes the reader wait for it; fourteen pixels reads
+ * as the page settling, which they barely notice and which is the whole
+ * point — the movement should make the text feel placed, not announced.
+ *
+ * The transition is declared on the resting state rather than only on
+ * the shown one, so the delay that staggers a row can be set per element
+ * without repeating the curve.
+ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 0.7, 0.3, 1) var(--reveal-delay, 0s),
+    transform 900ms cubic-bezier(0.22, 0.7, 0.3, 1) var(--reveal-delay, 0s);
+}
+
+[data-reveal][data-shown] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Where motion is unwelcome there is nothing to reveal: the content is
+ * simply there, which is what it would have been anyway. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* The language pair in the top bar. It takes its colour from the bar,
+ * so it turns with it: white over the photograph, ink once the pale
+ * panel has arrived underneath. That is the whole reason it is set in
+ * `currentColor` and distinguishes the active locale by opacity rather
+ * than by a colour of its own. */
+.landing-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+}
+
+.landing-lang-btn {
+  padding: 2px 3px;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.42;
+  transition: opacity 200ms ease;
+}
+
+.landing-lang-btn:hover {
+  opacity: 0.75;
+}
+
+.landing-lang-btn[aria-pressed="true"],
+.landing-lang-btn[aria-pressed="true"]:hover {
+  opacity: 1;
+}
+
+.landing-lang-sep {
+  opacity: 0.3;
+}
+
+/* ── The core statement ───────────────────────────────────────────────
+ * One sentence, set large, with one or two of its words cycling through
+ * alternatives. The component doc explains the choice; this is how it is
+ * drawn.
+ *
+ * ## The cycling slot
+ *
+ * Every alternative occupies the same grid cell, and an unseen copy of
+ * the longest one holds the width. Swapping a short word for a long one
+ * in normal flow would reflow the rest of the sentence on every turn —
+ * the thing that makes this trick look cheap when it is done badly.
+ *
+ * The wrapper carries the reveal and the options carry the cycle: one
+ * property each, so the two never argue over opacity.
+ */
+/* Set light and centred. The weight, the tracking and the ratio are
+ * measured off the reference rather than guessed: what reads as "thin"
+ * on those pages is weight 300 with tracking near -0.05em and a line
+ * ratio of about 1.15, not a different typeface.
+ *
+ * A shade back in colour, too, so the cycling word can carry the line at
+ * full ink without shouting. It stays well clear of the contrast floor. */
+.core-line {
+  font-family: var(--font-title), var(--font-sans), sans-serif;
+  margin: 0;
+  color: color-mix(in srgb, var(--text) 78%, var(--bg));
+  /* 400, up from 300. Plus Jakarta Sans is a touch lighter than Inter at
+     the same nominal weight, so keeping 300 would have cost presence on
+     top of the proportion change rather than only correcting it. */
+  font-weight: 400;
+  font-size: clamp(30px, 3.8vw, 52px);
+  line-height: 1.16;
+  /* Loosened with the weight: -0.045em was drawn for a 300 cut, and a
+     heavier one needs the room back. */
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* One line, always — above the breakpoint, where there is room for it.
+ * Below, the type has shrunk enough that wrapping costs nothing and
+ * forcing it would overflow instead. */
+
+
+/* The consequence, not the claim. Smaller, greyer, and on its own line
+ * so the eye finishes the first movement before starting the second.
+ *
+ * It carries its own measure: the statement above is allowed the full
+ * width so its one sentence stays on one line, which at this size would
+ * give the smaller text a line far too long to read. */
+.core-aside {
+  /* Inter, not the face the statement above it uses. It inherits from
+     that statement and has followed it through two changes of family
+     now — but this is small print at 21px, and Inter is the one drawn
+     for that size. The large faces mark what the page asserts; anything
+     explaining an assertion stays neutral. */
+  font-family: var(--font-sans), sans-serif;
+  display: block;
+  /* No measure of its own: the two sentences run as one line, and the
+     page's container is what eventually wraps them. A 54ch cap used to
+     break them in two well before that. */
+  max-width: none;
+  /* Centred as a box as well as in its lines — `text-align` alone would
+     centre the text inside a box still pinned to the left. */
+  margin-inline: auto;
+  /* A shade more air above it now that it is smaller, so the step down in
+     size does not also read as the two blocks drifting together. */
+  margin-top: 1.15em;
+  font-size: 0.4em;
+  /* The box is centred, its lines are not. Two short sentences centred
+     one above the other give a ragged left edge on both sides; ranged
+     left inside a centred box they keep one straight edge to read down,
+     and the block as a whole still sits on the page's axis. */
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+/* The cycling word is the one thing at full ink and at the body weight,
+ * against a statement set light — that contrast is what makes it read as
+ * chosen rather than as a word that happens to move.
+ *
+ * The face is a true italic serif, not the sans slanted: a synthetic
+ * oblique shears the letterforms rather than redrawing them, and at this
+ * size that shows.
+ *
+ * The 1.208 is measured, not chosen. At the same pixel size Inter's
+ * x-height is 29px where Newsreader's is 24, and since these words are
+ * lower-case it is the x-height the eye compares, never the nominal
+ * size. Set to 1em the word looked a size too small; this is what makes
+ * the two faces read as the same size. */
+/* The two sentences run together on one line. They were each given a
+ * line of their own earlier, which is the better reading when the block
+ * is ranged left; centred and set small, two short centred lines stacked
+ * one on the other read as a fragment rather than as a sentence. */
+.core-aside-line {
+  display: inline;
+}
+
+/* The cycling word takes a line of its own.
+ *
+ * The slot has to reserve the width of its longest alternative, or every
+ * turn would reflow the sentence. Inline and ranged left that reservation
+ * is invisible — the slack all falls at the end of the line. Centred, it
+ * splits: a short word like "posts" ends up stranded beside a gap as wide
+ * as "public announcements".
+ *
+ * The published fix is to animate the slot's width along with the word,
+ * which means measuring every alternative in JavaScript and keeping two
+ * clocks in step. A line of its own costs neither: the reservation is
+ * still there, but it is centred on the same axis as the sentence above
+ * it, so it reads as a line that happens to be short. */
+.core-slot {
+  display: block;
+  margin-top: 0.08em;
+  color: var(--text);
+  font-family: var(--font-accent), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  /* Newsreader runs optically smaller than the sentence around it, so it
+     is given the difference back — without it the word reads as a
+     mistake rather than as a choice.
+
+     1.19, and the number has to be measured on the *italic* cut, not the
+     upright. Computing it from the upright gave 1.12, which left the word
+     5% short — Newsreader's italic carries a smaller x-height than its
+     roman, so the two faces' published ratios are not enough. Measured on
+     the rendered text at 200px: the sentence's x stands at 108, the
+     word's at 91, and 108/91 is what this is. */
+  font-size: 1.19em;
+  letter-spacing: -0.02em;
+}
+
+/* `inline-grid` rather than `inline-block`: it is what lets every
+ * alternative share one cell and be measured together.
+ *
+ * `overflow: clip` makes the cell a window the words travel through, and
+ * is chosen over `hidden` deliberately: `hidden` turns an inline box's
+ * baseline into its bottom edge, which would drop the word below the
+ * line it sits in. `clip` cuts without touching the baseline.
+ *
+ * The clip margin gives ascenders and descenders their room back, since
+ * a cell sized to the line box would otherwise shave them. */
+.core-slot-grid {
+  display: inline-grid;
+  vertical-align: baseline;
+  overflow: clip;
+  overflow-clip-margin: 0.24em;
+}
+
+.core-slot-grid > * {
+  grid-area: 1 / 1;
+}
+
+.core-sizer {
+  visibility: hidden;
+}
+
+/* Parked above the window until their turn — every word except the
+ * first, which is left in place on purpose. The animation overrides it
+ * while it runs, and when nothing runs at all the slot still holds a
+ * word instead of going blank. That is not hypothetical: a reader with
+ * reduced motion got an empty slot, and so did anyone loading the page
+ * after the word count changed and its keyframes did not exist yet.
+ *
+ * The blue is the tile gradient from the products below, brought up to
+ * where it can be read on a pale ground: the same two hues, not a new
+ * colour invented for this one word. Painted per option rather than on
+ * the slot, so each word carries the whole ramp instead of a slice of
+ * one spread across the stack.
+ *
+ * `color: transparent` is only safe behind the support test — without
+ * it, a browser that cannot clip a background to its glyphs would show
+ * nothing at all. */
+.core-option:not(:first-child) {
+  transform: translateY(-116%);
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .core-option {
+    background-image: linear-gradient(
+      100deg,
+      #174a68 0%,
+      #256793 42%,
+      #4292b0 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* The hand-over: the words travel up through the window, and nothing
+ * fades. A word that dissolves reads as switched off; a word that
+ * disappears behind an edge reads as one of a set, which is the whole
+ * claim being made.
+ *
+ * The exit is deliberately *outside* the word's share of the cycle. Each
+ * option holds the slot for its full share and only then starts to
+ * leave, which is exactly when the next one starts to arrive, so the two
+ * cross and the slot is never empty. The guidance is blunt about this —
+ * never make a reader wait for a word to settle — and the first version
+ * of this animation failed it: it faded out, left a gap, then faded in.
+ *
+ * The percentages depend on how many alternatives share the cycle, and
+ * keyframe stops cannot be computed from a custom property, so there is
+ * one set per count. The rise is pinned at 3% rather than scaled with the
+ * share: with seven alternatives a 5% rise would be a third of a word's
+ * life on screen, and the slot would read as permanently in motion. */
+@keyframes core-turn-2 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  50.0000% {
+    transform: translateY(0);
+  }
+  53.0000%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-3 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  33.3333% {
+    transform: translateY(0);
+  }
+  36.3333%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-4 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  25.0000% {
+    transform: translateY(0);
+  }
+  28.0000%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-5 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  20.0000% {
+    transform: translateY(0);
+  }
+  23.0000%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-6 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  16.6667% {
+    transform: translateY(0);
+  }
+  19.6667%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-7 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  14.2857% {
+    transform: translateY(0);
+  }
+  17.2857%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-8 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  12.5000% {
+    transform: translateY(0);
+  }
+  15.5000%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-9 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  11.1111% {
+    transform: translateY(0);
+  }
+  14.1111%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-10 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  10.0000% {
+    transform: translateY(0);
+  }
+  13.0000%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-11 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  9.0909% {
+    transform: translateY(0);
+  }
+  12.0909%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+@keyframes core-turn-12 {
+  0% {
+    transform: translateY(116%);
+  }
+  3%,
+  8.3333% {
+    transform: translateY(0);
+  }
+  11.3333%,
+  100% {
+    transform: translateY(-116%);
+  }
+}
+
+/* The rotation is declared paused and resumed by the reveal, so the first
+ * word a reader ever sees in the slot is the first word of the list.
+ *
+ * Without the gate the animation starts at page load and runs while the
+ * statement is still below the fold and still at opacity 0, so by the time
+ * it was scrolled to it could be showing its fourth or fifth alternative —
+ * the reader met the list in the middle.
+ *
+ * Pausing costs nothing and needs no script: a paused animation holds at
+ * its current time, and the negative delay on the first option has already
+ * carried it up into its hold, so what is frozen on screen is "articles"
+ * with the other six parked out of sight. `data-shown` releases all seven
+ * at once, which is what keeps the stagger intact — they resume from where
+ * they were rather than restarting.
+ *
+ * It degrades the right way too: if the reveal never fires, the slot holds
+ * the first word instead of going blank. */
+@media (prefers-reduced-motion: no-preference) {
+  .core-slot-grid[data-cycles] .core-option {
+    animation: var(--turns) var(--cycle) var(--turn) infinite both;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-play-state: paused;
+  }
+
+  [data-shown] .core-slot-grid[data-cycles] .core-option {
+    animation-play-state: running;
+  }
+}
+
+/* ── The two products, side by side ──────────────────────────────────
+ * The grid of one reference crossed with the exclusivity of the other:
+ * both products are on the page at once, but only one is lit. There is
+ * no card — no fill, no border, no radius around the column. What
+ * separates the two is the gap, and nothing else.
+ *
+ * ## One dial, not eight
+ *
+ * Everything the state changes — the column's width and scale, the
+ * visual's colour, the text's weight on the page — is driven by a
+ * single number, `--dim`,
+ * which is 0 for the live column and 1 for the quiet one. It is
+ * registered with `@property` so that `calc()` can do arithmetic on it;
+ * an unregistered custom property is an arbitrary string as far as the
+ * engine is concerned.
+ *
+ * The transitions are declared on the concrete properties — filter,
+ * opacity, transform — and not on `--dim` itself. Transitioning the
+ * custom property is the tidier-looking version and it was the first
+ * attempt: one declaration, every dependent value following in step. It
+ * does not survive the first paint, because the registered initial value
+ * gives the engine a before-change style to interpolate from, so the
+ * quiet column loads lit and animates to grey in front of the reader.
+ * Three declarations that only fire on a real change are worth more than
+ * one that fires on arrival.
+ *
+ * ## Which one is lit
+ *
+ * At rest, the first. Desk is the product that can be bought today, so it
+ * holds the active state when nobody is pointing at anything. Hovering
+ * the row dims both, and the hovered column takes it back — the rules are
+ * written in that order because they share a specificity and the last one
+ * has to win.
+ *
+ * Below 981px the columns stack, and dimming is dropped entirely: one
+ * above the other there is no choice to express, and on a touch screen
+ * there is no hover to express it with. A permanently grey second
+ * column would just look broken.
+ *
+ * ## The ground under the visuals
+ *
+ * A flat tint, deeper than the page. Removing the dark cards left the
+ * section very pale immediately after a near-black hero, and both
+ * references lean on their visual's ground for exactly that contrast. It
+ * is mixed from the text colour rather than hard-coded so it follows the
+ * theme instead of turning into a grey slab in the dark one.
+ */
+@property --dim {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+/* The gutter lives here rather than in a utility class, because the
+ * divider has to sit at exactly half of it. Two definitions of the same
+ * number drift the moment one of them changes. */
+.landing-products {
+  --gutter: 64px;
+  gap: 0 var(--gutter);
+}
+
+@media (max-width: 1180px) {
+  .landing-products {
+    --gutter: 40px;
+  }
+}
+
+@media (max-width: 980px) {
+  .landing-products {
+    gap: 64px 0;
+  }
+}
+
+.landing-product {
+  --dim: 0;
+  min-width: 0;
+  position: relative;
+}
+
+/* The hairline between the two. It spans the full row rather than one
+ * column's content because flex stretches both items to the taller of
+ * the two, so `top: 0; bottom: 0` is the whole row by construction.
+ *
+ * It rides on the article, which never scales, and is placed relative to
+ * the column edge rather than the row centre — the boundary between the
+ * two moves as they trade width, and a line pinned to the middle would
+ * drift away from it on every hover. */
+@media (min-width: 981px) {
+  .landing-products > .landing-product + .landing-product::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--gutter) / -2);
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+}
+
+/* The rule under the name is the one mark that says "this one", rather
+ * than saying it only by degrees of grey. It goes to zero width on the
+ * quiet column and keeps its margin, so nothing below it moves. */
+.landing-product-name::after {
+  content: "";
+  display: block;
+  width: calc((1 - var(--dim)) * 56px);
+  height: 2px;
+  margin-top: 16px;
+  background: var(--text);
+  transition: width 420ms ease-in-out;
+}
+
+/* ── The dark Veilla ground ──────────────────────────────────────────
+ * One definition, two users: the product tiles and the closing card.
+ * Factored the moment it had a second user, because a page that repeats
+ * its own motifs reads as composed while one that invents a colour per
+ * section reads as assembled — and two copies of a four-radial wash
+ * drift apart the first time one of them is adjusted.
+ *
+ * `--text-2` and `--text-3` are redefined here as alpha steps off
+ * `--text` rather than as their own colours. The ground is a gradient,
+ * so a fixed grey would be right in one corner of the card and wrong in
+ * the other; a transparent tint of the ink is right everywhere. The
+ * tiles never needed this because nothing but a screenshot is placed in
+ * them — the card carries actual prose. */
+.landing-product-visual {
+  /* Deep, and the same in both themes: the tile is a dark object on a
+   * pale page, not a surface that follows it.
+   *
+   * Not a flat fill. Three very large, very soft radials in blue, plus
+   * the grain below, read as a photograph well out of focus — which is
+   * the point: a flat rectangle behind a screenshot looks like a panel
+   * that was never finished, and an actual photograph behind it is a
+   * picture competing with a picture. This is the middle ground, and it
+   * costs one declaration rather than a file.
+   *
+   * The light falls top-left, where the screenshot is anchored from, so
+   * the two bands of ground that stay visible are the brightest part of
+   * the wash rather than its dead corner. A second, weaker light comes
+   * up from the bottom right, and the near-navy depth sits in the
+   * bottom-left corner to leave room for it. Light at both ends and depth across the diagonal between them is
+   * what stops a wash reading as a single fade.
+   *
+   * The two tokens are redefined for the subtree rather than every rule
+   * inside being rewritten. Everything drawn in here — the Signal visual
+   * in full, the screenshot's rule and its glow — is already expressed as
+   * a mix of `--text` and `--bg`, so flipping the pair at the top flips
+   * the whole drawing at once and keeps one definition of "ink" instead
+   * of two that can drift. Nothing else is ever placed in this box. */
+  isolation: isolate;
+  background-color: #101f2b;
+  background-image:
+    radial-gradient(62% 72% at 16% 8%, rgb(56 122 146 / 58%), transparent 66%),
+    radial-gradient(54% 60% at 80% 98%, rgb(64 132 156 / 36%), transparent 68%),
+    radial-gradient(56% 66% at 92% 28%, rgb(36 88 120 / 42%), transparent 70%),
+    radial-gradient(70% 78% at 24% 112%, rgb(8 26 42 / 62%), transparent 72%);
+  --text: #f2f2f0;
+  --text-2: color-mix(in srgb, var(--text) 72%, transparent);
+  --text-3: color-mix(in srgb, var(--text) 50%, transparent);
+
+  /* And its shape, its ratio, and the dial that dims it when the other
+   * product is the one being read. */
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 10px;
+  opacity: calc(1 - var(--dim));
+  transition: opacity 420ms ease;
+}
+
+/* The closing statement, set like the one in the middle of the page: big,
+ * light, and tightly tracked. Weight 300 at this size is the thing the
+ * reference pages all do and it is counter-intuitive — the presence comes
+ * from the size and the tracking, never from the weight. Measured on
+ * them: 48 to 82px at weight 300, tracking between -0.04 and -0.05em. */
+.partners-line {
+  font-family: var(--font-accent), Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 56px);
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+/* The picture, softened towards its edges.
+ *
+ * Not a fade: a fade would dissolve the photograph into the page and
+ * leave a pale halo. This is a real blur, applied only where the mask is
+ * opaque — transparent across the middle, solid at the rim — so the
+ * centre stays sharp and the edges melt.
+ *
+ * `backdrop-filter` on a layer above the picture is what makes that
+ * possible: the filter reads what is painted behind it, which is the
+ * photograph itself, and the mask decides where it applies. A `filter`
+ * would have blurred the whole thing.
+ *
+ * Where the property is missing the layer simply does nothing, and the
+ * picture keeps its hard edge — the right failure for an ornament. */
+.partners-photo {
+  /* Both are load-bearing: `relative` gives the blur layer something to
+     pin to, `isolate` keeps the filter from reaching the page behind. */
+  position: relative;
+  isolation: isolate;
+}
+
+.partners-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  /* Unprefixed only. Writing the -webkit- form by hand made the
+     minifier keep that one and drop the standard property, which left
+     the blur inert — it adds the prefixes itself from the browser
+     targets. */
+  /* Two levers, both eased back: a smaller radius, and a mask that never
+     reaches full strength — the corner keeps a little of the picture
+     rather than dissolving into it. */
+  backdrop-filter: blur(6px);
+  mask-image: radial-gradient(
+    closest-side,
+    rgb(0 0 0 / 0%) 66%,
+    rgb(0 0 0 / 36%) 86%,
+    rgb(0 0 0 / 76%) 100%
+  );
+}
+
+/* One word per box, so each can be blurred and nudged on its own. */
+.partners-word {
+  display: inline-block;
+}
+
+/* The word is lit as the reader reaches it.
+ *
+ * The keyframes run from dim to full, and the rule that applies them sits
+ * behind a support test: where scroll-driven animations do not exist the
+ * words are simply never dimmed, which is the right failure — the
+ * sentence reads normally and only the flourish is missing.
+ *
+ * `both` is what makes the effect hold either side of its window: before
+ * its range a word stays at the first keyframe, after it at the last.
+ *
+ * The timeline is declared on the heading and read by its children, so
+ * every word is measured against the same travel. Giving each word its
+ * own `view()` would time it against its own line instead, and the words
+ * on line two would start over from the beginning. */
+@keyframes partners-word {
+  from {
+    /* 14% rather than the reference's 26%: the word has to be faint
+       enough that the eye skips it and goes to the lit ones, but present
+       enough that the line keeps its shape and nothing reflows. */
+    color: color-mix(in srgb, var(--text) 14%, transparent);
+    filter: blur(2.5px);
+    translate: 0 2px;
+  }
+
+  to {
+    color: var(--text);
+    /* `blur(0px)`, not `blur(0)` — the unitless form serialises back as
+       `blur()` with no argument, which is not a value anything can
+       interpolate towards. */
+    filter: blur(0px);
+    translate: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .partners-line {
+      view-timeline-name: --partners-line;
+    }
+
+    .partners-word {
+      animation: partners-word linear both;
+      animation-timeline: --partners-line;
+      animation-range: var(--range);
+    }
+  }
+}
+
+/* The payoff, in the face the cycling word already uses. Newsreader runs
+ * optically smaller than Inter at the same pixel size — measured earlier
+ * on this page at an x-height of 24 against 29 — so it is given the
+ * difference back, or it reads as a mistake rather than a choice.
+ *
+ * A real italic rather than a synthetic oblique: the browser's own slant
+ * shears the letterforms instead of redrawing them, and at this size that
+ * is plainly visible. */
+.partners-accent {
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* The zoom lives on an inner layer, not on the tile: scaling the tile
+ * itself would scale its rounded corners and its ground along with the
+ * picture, and the crop would stop being a crop. */
+.landing-product-frame {
+  position: absolute;
+  inset: 0;
+}
+
+/* Grain. Three things make it read as texture rather than as dirt:
+ * `feColorMatrix saturate 0`, without which feTurbulence emits *coloured*
+ * noise that muddies the wash; `stitchTiles` so the 200px tile repeats
+ * without a visible seam; and `overlay` rather than `multiply`, which
+ * lays down lighter and darker specks instead of only darkening.
+ *
+ * `isolation: isolate` on the tile keeps that blend inside it. Without
+ * it an overlay reaches for whatever is painted behind, which is the
+ * page. */
+/* The foot of the page goes dark and stays dark, which is the move the
+ * reference makes under its own closing cards. The page then ends in the
+ * register it opened in, since the hero is a dark photograph too.
+ *
+ * Every token is redefined rather than every rule inside being rewritten:
+ * the footer is built entirely out of `--text`, `--text-2`, `--text-3`
+ * and `--border`, so flipping the four at the top flips the whole thing
+ * at once and keeps one definition of "ink" instead of two that drift.
+ *
+ * The secondary inks are alpha steps off the new ink rather than their
+ * own greys, for the same reason the tiles use them: a fixed grey picked
+ * against white is the wrong grey against navy. */
+.landing-foot {
+  /* Black, not the page's navy. Near-black rather than #000: measured on
+   * the references, none of them use pure black for a full-width ground —
+   * Harvey sits at 14 in luminance, Wonderful at 8 — because pure black
+   * against a lit screen reads as a hole rather than as a surface. */
+  background: #0b0b0c;
+  /* `color` has to be restated, not just the token. It is inherited as an
+   * already-computed value from `body`, so redefining `--text` here does
+   * not re-resolve it — everything that paints with `currentColor` rather
+   * than with `var(--text)` kept the page's near-black ink. The brand mark
+   * is drawn in `currentColor`, which is how it came out black on black. */
+  color: var(--text);
+  --bg: #0b0b0c;
+  --text: #f2f2f0;
+  --text-2: color-mix(in srgb, var(--text) 72%, transparent);
+  --text-3: color-mix(in srgb, var(--text) 48%, transparent);
+  --border: color-mix(in srgb, var(--text) 14%, transparent);
+}
+
+/* ── The closing call ────────────────────────────────────────────────
+ * A photograph running the full width of the section, and the words
+ * straight on it. The ink is the page's own rather than white: measured
+ * across this picture, white never clears 1.9:1 anywhere on it, while
+ * near-black holds 10:1 over its pale top and 4.7:1 through its middle.
+ * The technique is borrowed, the ink is chosen for the picture at hand. */
+.landing-close {
+  /* Light ink. The picture is dark wood at the top — 65 in luminance —
+   * and a bright newspaper at the foot, with specular highlights on the
+   * varnish. Measured on the raw file, neither ink clears 1.17:1 at the
+   * worst pixel of any fifth: it is not a photograph anything can be
+   * written on bare. Under the fall below, white reaches 4.9:1 at that
+   * same worst pixel. */
+  --text: #f2f2f0;
+  --text-2: color-mix(in srgb, var(--text) 80%, transparent);
+
+  /* Black is the ground and the photograph sits on it, not the reverse.
+   *
+   * Every earlier attempt had the picture covering the section with a
+   * veil over it, and no amount of raising that veil ever produced black
+   * — it produced a darkened photograph, because the photograph was
+   * still there underneath. The reference does something else: its
+   * picture simply *ends*, and below it is the page's own black. The
+   * transition is a boundary, not a dimming.
+   *
+   * So the picture takes the top 70% of the section and no more, on
+   * `::before`; the fall spans the whole height on `::after`; and what
+   * shows through below is this colour, the black the footer continues
+   * in. Two layers rather than two backgrounds, because each has to be
+   * sized independently.
+   *
+   * 70% is geometry, not taste: the two cards span 55% to 73%, so the
+   * boundary falls in their lower third. The black comes up through
+   * them, which is what makes them read as glass lying across an edge. */
+  background-color: #0b0b0c;
+}
+
+
+/* The photograph, on a layer of its own rather than as a background of
+ * the section — a background image cannot be filtered, only an element
+ * can, and the smear is a filter. It stops at the height where the fall
+ * above it has reached total black, so its own bottom edge is never a
+ * visible line. */
+.landing-close::before {
+  content: "";
+  position: absolute;
+  /* Oversized on every side, and for two reasons at once: a smear pulls
+     the edges of the layer inward, and the rotation below swings its
+     corners into view unless they start well outside the box.
+
+     The height is not a guess. A box of w × h turned by θ still covers a
+     rectangle only h·cosθ − w·sinθ tall, and at 7° with this width that
+     costs 215px. The fall reaches total black at 84% of a 650px section,
+     so 546px have to be covered: 22% of overhang at the top is what buys
+     it, and 16% was 39px short. */
+  inset: -22% -12% 0 -12%;
+  z-index: 0;
+  background-image: url("/landing/band/press-blue.webp");
+  background-size: cover;
+  /* Anchored above centre: the picture's lower half is where its brightest
+     paper runs, and that half is the one the fall covers anyway. */
+  background-position: center 38%;
+  filter: url("#veilla-motion");
+  /* The angle. Applied after the filter, so it takes the horizontal smear
+     with it and turns it into a diagonal one. */
+  transform: rotate(-7deg);
+}
+
+/* The fall, and nothing else. It begins at zero — the top of the picture
+ * is untouched — and grows all the way down, reaching total black at 88%
+ * of the section. The number follows the cards rather than leading them:
+ * at 280px tall, in a section whose foot has been cut back to 112px, they
+ * end at about 85% of ~749px. The black lands just under them, which is
+ * where it has landed through every change to their size.
+ *
+ * A flat veil was tried first and was wrong: it dimmed the picture
+ * everywhere, including the part meant to be seen. What this needs is not
+ * less light at the top, it is more dark at the bottom. */
+.landing-close::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(11 11 12 / 0%) 0%,
+    rgb(11 11 12 / 4%) 19%,
+    rgb(11 11 12 / 11%) 34%,
+    rgb(11 11 12 / 24%) 48%,
+    rgb(11 11 12 / 42%) 59%,
+    rgb(11 11 12 / 64%) 70%,
+    rgb(11 11 12 / 85%) 79%,
+    #0b0b0c 88%
+  );
+}
+
+/* The content rides above the picture and the fall. */
+.landing-close > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* The closing title borrows the partners statement's rule for its size
+ * and measure, but not its face. Two statements in the expressive serif,
+ * one at each end of the page, read as a pair; three read as a habit —
+ * and this one sits above two cards and a photograph that are already
+ * doing the talking. Back to Inter, at the light weight and the tight
+ * tracking that cut was drawn for. */
+.landing-close h2 {
+  font-family: var(--font-title), var(--font-sans), sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+}
+
+/* Frosted glass, one declaration for both panels. What makes one read
+ * pale and the other dark is never the fill — it is the picture behind
+ * it, which a translucent panel takes the colour of. That is the whole
+ * trick, and it is why the card always looks made for its photograph.
+ *
+ * `backdrop-filter` forces a compositing layer, so it is asked for only
+ * on these two boxes and never on anything that scrolls under them. */
+/* The pair trade width. Both start equal; the one being pointed at takes
+ * the space the other gives up, which is only possible in flex — a grid
+ * column cannot borrow from its neighbour.
+ *
+ * `flex-basis: 0` matters: with `auto` the two would start from their
+ * content widths and the labels, which differ in length, would make the
+ * cards unequal before anyone had touched them. */
+.landing-close-card {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  /* The label sits at the foot of the card, not at its waist — the
+     reference's arrangement, and the one that makes a tall card read as a
+     panel with a name on it rather than as an oversized button. */
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 40px;
+  /* Tall enough to be a panel rather than a bar, and no taller. The label
+     sits at its foot, so the height is mostly empty on purpose — that
+     emptiness is what lets the picture behind the glass be seen. */
+  min-height: 280px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 28%);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  font-family: var(--font-title), var(--font-sans), sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    flex-grow 240ms ease-out,
+    background-color 140ms ease,
+    color 140ms ease,
+    transform 140ms ease;
+}
+
+/* Where the blur cannot be had, the fill carries the panel alone — at 28%
+ * an unblurred white over a photograph reads as a smear rather than as
+ * glass. */
+@supports not (backdrop-filter: blur(1px)) {
+  .landing-close-card {
+    background: rgb(255 255 255 / 68%);
+  }
+}
+
+/* On hover the glass stops being glass: a flat white panel with black
+ * type. Nothing in between — a translucent card that merely brightens
+ * reads as a rollover state, an opaque one reads as the card having been
+ * picked up. */
+.landing-close-card:hover {
+  flex-grow: 1.6;
+  background: #f7f7f5;
+  color: #0b0b0c;
+}
+
+@media (max-width: 720px) {
+  .landing-close-card:hover {
+    flex-grow: 1;
+  }
+
+  .landing-close-arrow {
+    opacity: 1;
+  }
+}
+
+/* The arrow belongs to the card being read, and to no other. Two discs on
+ * screen at once would say both cards are live; one says which. */
+.landing-close-arrow {
+  /* Hidden until its card is the one being read: two discs on screen at
+     once would say both cards are live, one says which. */
+  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border-radius: 999px;
+  /* The disc follows the label, so it flips with the card: light on the
+     glass, dark once the panel turns white. Pinning it to `--text`,
+     which is light in this section, would give a light disc holding a
+     light glyph. */
+  background: currentColor;
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease,
+    background-color 140ms ease;
+}
+
+/* And the glyph is the opposite of the disc it sits on, always. */
+.landing-close-card:hover .landing-close-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.landing-close-arrow svg {
+  color: #0b0b0c;
+  transition: color 140ms ease;
+}
+
+.landing-close-card:hover .landing-close-arrow svg {
+  color: #f7f7f5;
+}
+
+/* Desk's ground: the same wash as Signal's, in sand.
+ *
+ * Same construction exactly — a flat base, a broad light falling from the
+ * top left, a weaker second light from the bottom right, a mid tone on
+ * the right edge, and depth pulled into the bottom-left corner. Only the
+ * five colours change, and they are not invented: they are percentiles
+ * sampled off the photograph this replaces, from its floor at #6d6359 to
+ * its highlight at #f2e3c3.
+ *
+ * Keeping the geometry identical is the point. The two products then read
+ * as the same object in two materials, which is a difference a reader can
+ * name; two different washes would just look like two different tiles.
+ *
+ * The base sits at 162 in luminance against the page's 251, so the tile
+ * is still a distinct object on the paper rather than a pale patch of it
+ * — the thing that makes Signal's version work, kept at the other end of
+ * the scale.
+ *
+ * The ink flips with the ground: the screenshot's hairline and glow are
+ * mixed from `--text`, and near-white is invisible on sand. The grain
+ * stays, because this is a wash again and not a photograph. */
+.landing-product-visual[data-tone="sand"] {
+  background-color: #b1a090;
+  background-image:
+    radial-gradient(62% 72% at 16% 8%, rgb(235 212 180 / 58%), transparent 66%),
+    radial-gradient(54% 60% at 80% 98%, rgb(242 227 195 / 36%), transparent 68%),
+    radial-gradient(56% 66% at 92% 28%, rgb(200 176 150 / 42%), transparent 70%),
+    radial-gradient(70% 78% at 24% 112%, rgb(109 99 89 / 62%), transparent 72%);
+  --text: #18181b;
+}
+
+.landing-product-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.75;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* The screenshot sits ON the ground rather than replacing it: inset from
+ * the top and the left, running off the right and the bottom. Two edges
+ * of ground and two edges cut is what reads as a window onto a larger
+ * screen; inset on all four sides would read as a framed picture, and
+ * inset on none would just be a tile-shaped screenshot.
+ *
+ * It also puts the two products on the same footing. Signal is drawn on
+ * the ground, so News had to sit on it too or the pair would look like
+ * two unrelated treatments.
+ *
+ * Only the corner that is actually a corner gets a radius, and only the
+ * two visible edges get a rule. The shadow is thrown up and to the left,
+ * onto the ground it is lying on. */
+.landing-product-shot {
+  position: absolute;
+  inset: 34px 0 0 34px;
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-top: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+  box-shadow: -10px -10px 30px color-mix(in srgb, var(--text) 5%, transparent);
+}
+
+@media (max-width: 720px) {
+  .landing-product-shot {
+    inset: 20px 0 0 20px;
+  }
+}
+
+/* The measure follows the column instead of being fixed. Capped at a
+ * flat 46ch, the lit column's text filled 464px of the 869px it is
+ * given — a narrow block stranded in a wide space, which is what it
+ * looked like.
+ *
+ * It opens to 66ch when the column comes forward, and no further. 66
+ * characters is the measure typography has settled on, and the column
+ * would allow about 86: filling it would make each line long enough
+ * that the eye loses which one it is returning to. So the number is
+ * chosen for the reader, not for the space available.
+ *
+ * Same duration and curve as the `flex-grow` above, so the text and the
+ * column it sits in arrive together rather than one chasing the other.
+ * Below the breakpoint `--dim` is 0 on both columns, so a stacked layout
+ * simply gets the wider measure. */
+.landing-product-body {
+  max-width: calc(46ch + (1 - var(--dim)) * 20ch);
+  opacity: calc(1 - var(--dim) * 0.28);
+  transition:
+    max-width 420ms ease-in-out,
+    opacity 420ms ease;
+}
+
+/* The button belongs to the column that is being read, and to no other.
+ * It goes all the way out rather than dimming: a call to action at 70%
+ * is still a call to action, and two of them on screen at once is the
+ * one thing this section is built to avoid. */
+.landing-product-cta {
+  opacity: calc(1 - var(--dim));
+  transition: opacity 420ms ease;
+  cursor: pointer;
+}
+
+/* The name drops further than the copy under it. It is set large, so it
+ * still clears three to one against the page at this level, which the
+ * body copy would not. */
+.landing-product-name {
+  opacity: calc(1 - var(--dim) * 0.5);
+  transition: opacity 420ms ease;
+}
+
+.landing-product-arrow {
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+
+/* The closing band's link behaves exactly like the two product links —
+ * same underline on hover, same arrow slide — so the page has one way of
+ * saying "this is a link" rather than two. */
+.landing-product-cta:hover,
+.landing-quiet-cta:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.landing-product-cta:hover .landing-product-arrow,
+.landing-quiet-cta:hover .landing-product-arrow {
+  transform: translateX(4px);
+}
+
+/* The distance between the two is carried by geometry — width and
+ * scale — and not by fading the text further. At two and a half to one
+ * the quiet column is visibly a footnote to the live one, and the eye
+ * reads that long before it reads a difference in ink.
+ *
+ * The text opacities are where they are for a reason and should not be
+ * pushed to widen the gap: the quiet column is a resting state, not a
+ * passing one, and its heading already sits near the floor of three to
+ * one against the page. Anything darker would make it permanently hard
+ * to read for someone who never hovers.
+ *
+ * The quiet column has no visual at all. With the width already halved
+ * there is nothing in that picture a reader could use, and a faint one
+ * is worse than none: it reads as a mockup left behind rather than as a
+ * deliberate absence.
+ *
+ * It goes to zero opacity rather than being collapsed or removed. Flex
+ * stretches both columns to the taller of the two, so the row is already
+ * as tall as the lit column — collapsing the box would free no space and
+ * would animate a height, which reflows. Fading costs nothing.
+ *
+ * The text is dimmed far less, and deliberately so. At the opacity that
+ * suits a picture the body copy drops under three to one against the
+ * page, and the quiet column is the resting state, not a passing one —
+ * it would be permanently hard to read for anyone who never hovers. */
+@media (min-width: 981px) {
+  /* The live column takes the room, and the quiet one gives it up. Only
+   * the winner is told to grow; the other is squeezed by being its flex
+   * sibling, never told to shrink — the same trick the earlier cards
+   * used, and the reason the pair never adds up to more than the row.
+   *
+   * The scale rides on top of the width. Width alone reads as a layout
+   * adjusting; scale alone reads as a picture zooming. Together they
+   * read as one column coming forward and the other stepping back, and
+   * since a transform takes no part in layout the two do not fight.
+   *
+   * Anchored at the top so the two headings stay on the same line while
+   * the growth goes downward. Both properties are below the breakpoint
+   * on purpose: stacked, there is no room to trade and nothing to
+   * choose between, so the columns are left alone.
+   *
+   * Neither value is transitioned through `--dim` itself. The number
+   * flips instantly and `flex-grow` and `transform` interpolate from
+   * their own computed values, which is what keeps the first paint
+   * still. */
+  .landing-products > .landing-product {
+    flex: 1 1 0;
+    flex-grow: calc(2.5 - var(--dim) * 1.5);
+    transition: flex-grow 420ms ease-in-out;
+  }
+
+  .landing-product-inner {
+    transform: scale(calc(1.03 - var(--dim) * 0.11));
+    transform-origin: top center;
+    transition: transform 420ms ease-in-out;
+  }
+
+  /* Which column is lit is a *choice*, not a reflection of where the
+   * pointer happens to be. Pointing at one picks it, and it stays
+   * picked once the pointer has gone — scrolling away from the row no
+   * longer snaps it back to the first product, which made the reader's
+   * own selection look like it had been overruled.
+   *
+   * With no pick yet, the second column is the quiet one: Desk is the
+   * product that can be bought today and holds the state at rest. */
+  .landing-products > .landing-product + .landing-product {
+    --dim: 1;
+  }
+
+  .landing-products[data-picked="1"] > .landing-product {
+    --dim: 1;
+  }
+
+  .landing-products[data-picked="1"] > .landing-product + .landing-product {
+    --dim: 0;
+  }
+
+  /* Invisible is not enough for a link: at zero opacity it can still be
+   * clicked and still takes a tab stop. The same rules again, because
+   * `pointer-events` cannot be carried by `--dim` — put on the column it
+   * would suppress the very pointer event that drives the pick. */
+  .landing-products > .landing-product + .landing-product .landing-product-cta,
+  .landing-products[data-picked="1"] > .landing-product .landing-product-cta {
+    pointer-events: none;
+  }
+
+  .landing-products[data-picked="1"]
+    > .landing-product
+    + .landing-product
+    .landing-product-cta {
+    pointer-events: auto;
+  }
+
+  /* A loop nobody is looking at is wasted work, so the quiet column's
+   * three indicator loops are frozen. The beats themselves are left
+   * alone: they are gated by `data-phase` and a second opinion on their
+   * play state would fight the gate. */
+  .landing-products > .landing-product + .landing-product :is(.signal-agent-ring, .signal-agent-spin, .signal-agent-typing, .signal-caret) :is(i, circle) {
+    animation-play-state: paused;
+  }
+
+  .landing-products[data-picked="1"] > .landing-product + .landing-product :is(.signal-agent-ring, .signal-agent-spin, .signal-agent-typing, .signal-caret) :is(i, circle) {
+    animation-play-state: running;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-product {
+    transition: none;
+  }
+}
+
+/* ── Veilla Signal visual ──────────────────────────────────────────────
+ * Signals arrive and pile up under the agent, the agent weighs the pile,
+ * one message is written from what survived and delivered. The component
+ * doc explains the shape; what matters here is how it is driven.
+ *
+ * ## The scroll picks the beat; time plays it
+ *
+ * `data-phase` on the track goes 0, 1, 2 as the reader scrolls through
+ * it, and each beat then plays itself out on the clock. Everything below
+ * is an ordinary timed animation, declared once and starting **paused**.
+ *
+ * A beat is unpaused when it arrives and is never paused again. A
+ * finished beat therefore holds its last frame — `forwards` — while the
+ * next runs on top of it, which is what keeps the agent, the pile and
+ * the two survivors continuous instead of cross-fading three drawings.
+ * They are the same elements from first frame to last, and nothing is
+ * ever reset mid-sequence.
+ *
+ * `animation-play-state` applies per animation, not per element, so the
+ * three elements that are animated in more than one beat take a comma
+ * list. Everything else is gated by `data-p`.
+ *
+ * ## Ink
+ *
+ * Every value is mixed from `--text`, never hard-coded. The tile
+ * redefines that token for its own subtree, so this drawing follows its
+ * ground without a single colour being repeated here.
+ *
+ * The percentages assume a dark ground. The same fraction of ink reads
+ * far heavier on a light surface than the same fraction of light reads
+ * on a dark one, so a change of ground needs a new set of numbers, not
+ * the same ones inverted.
+ *
+ * Wherever motion is turned down, nothing animates and the tile rests on
+ * its base styles, which are the delivered frame.
+ */
+.signal-stage {
+  position: absolute;
+  inset: 0;
+  color: var(--text);
+}
+
+.signal-caption {
+  position: absolute;
+  left: 30px;
+  top: 28px;
+  right: 0;
+}
+
+.signal-segs {
+  display: flex;
+  gap: 5px;
+}
+
+/* Stories-style progress. The segment is the empty track; the `i`
+ * inside it is the fill. Segments behind the live beat are full,
+ * the live one fills over its beat, the rest are empty.
+ *
+ * The fill is not decoration — it is the clock. Its `animationend` is
+ * what advances the sequence, so pausing it pauses the advance and no
+ * separate timer can drift away from what the reader sees. */
+.signal-seg {
+  position: relative;
+  width: 34px;
+  height: 2px;
+  border-radius: 1px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--text) 20%, transparent);
+}
+
+.signal-seg i {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* Beats already spent stay full. */
+.signal-stage[data-phase="1"] .signal-seg:nth-child(1) i,
+.signal-stage[data-phase="2"] .signal-seg:nth-child(-n + 2) i {
+  transform: scaleX(1);
+}
+
+/* The rail is the control, laid over the drawing: three empty slots the
+ * width of the tile. `scroll-snap-stop: always` is the whole reason this
+ * is sideways — it halts the scroll at every slot even during a fling,
+ * which is the guarantee that one gesture is one beat. Nothing on the
+ * vertical wheel can promise that.
+ *
+ * `overscroll-behavior-x: contain` keeps the gesture from chaining to
+ * the page or arming the browser's back-swipe. */
+.signal-rail {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.signal-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.signal-rail i {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.signal-labels {
+  position: relative;
+  height: 12px;
+  margin-top: 12px;
+}
+
+.signal-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  /* Mixed from --text, not --text-3: the tile redefines the first and
+   * not the second, so a greyscale token would keep the page's grey and
+   * ignore the ground it is sitting on. */
+  color: color-mix(in srgb, var(--text) 60%, transparent);
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+/* The caption is a plain state change, not an animation: it has nothing
+ * to play, it only has to say which beat is running. */
+.signal-stage[data-phase="0"] .signal-label:nth-child(1),
+.signal-stage[data-phase="1"] .signal-label:nth-child(2),
+.signal-stage[data-phase="2"] .signal-label:nth-child(3) {
+  opacity: 1;
+}
+
+.signal-layer {
+  position: absolute;
+  inset: 84px 0 0 30px;
+  container-type: size;
+}
+
+/* ## The agent */
+.signal-agent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--text) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text) 24%, transparent);
+}
+
+/* The agent's three states, each parked to its right so they travel with
+ * it and need no coordinates of their own. The wrapper is switched by
+ * the beat; the loop inside is on the clock, because none of them should
+ * stop just because the reader has. */
+.signal-agent-ring,
+.signal-agent-spin,
+.signal-agent-typing {
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.signal-stage[data-phase="0"] .signal-agent-ring,
+.signal-stage[data-phase="1"] .signal-agent-spin,
+.signal-stage[data-phase="2"] .signal-agent-typing {
+  opacity: 1;
+}
+
+.signal-agent-ring {
+  position: absolute;
+  inset: -1px;
+}
+
+.signal-agent-ring i {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--text) 45%, transparent);
+  opacity: 0.3;
+}
+
+.signal-agent-spin,
+.signal-agent-typing {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.signal-agent-spin svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+/* The trail, and nothing else — no ring behind it. 2 x pi x 9 is 56.5,
+ * so 42 of dash offset leaves about a quarter of the circumference
+ * showing, with a rounded end. A track behind it would read as a gauge
+ * with a total to fill, which is the opposite of what an indeterminate
+ * mark says. */
+.signal-spin-arc {
+  stroke: color-mix(in srgb, var(--text) 88%, transparent);
+  stroke-dasharray: 56.5;
+  stroke-dashoffset: 42;
+  transform-origin: center;
+}
+
+.signal-agent-typing {
+  display: flex;
+  gap: 4px;
+}
+
+.signal-agent-typing i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text);
+  opacity: 0.25;
+}
+
+/* ## The pile
+ *
+ * The cards are absolutely positioned rather than laid out in a column,
+ * because the pile has to *grow*. In a flex column every card occupies
+ * its slot from the start, so the column stands at its full height
+ * before a single card has arrived and nothing grows — they merely fade
+ * into a shape that was already there. */
+.signal-pile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: min(392px, 100%);
+  height: 302px;
+}
+
+.signal-cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The card owns its place in the pile and nothing else. Everything that
+ * can be seen lives in the box inside it, which is what lets the box be
+ * dissolved in the last beat while the card stays to carry the link. */
+.signal-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: calc(var(--slot) * 44px);
+  height: 38px;
+  opacity: 0;
+}
+
+.signal-card-box {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border-radius: 7px;
+  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  background-color: color-mix(in srgb, var(--text) 6%, transparent);
+  overflow: hidden;
+}
+
+/* A chain link, centred in whatever the card has narrowed to. It is not
+ * in the box, so the box can go without taking it. */
+.signal-card-link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 19px;
+  height: 19px;
+  margin: -9.5px 0 0 -9.5px;
+  fill: none;
+  stroke: color-mix(in srgb, var(--text) 78%, transparent);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0;
+}
+
+.signal-card-icon {
+  flex: none;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  color: color-mix(in srgb, var(--text) 62%, transparent);
+}
+
+.signal-card-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.signal-card-bar {
+  flex: 0 1 auto;
+  height: 5px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--text) 34%, transparent);
+}
+
+.signal-card-when {
+  flex: none;
+  width: 22px;
+  height: 4px;
+  margin-left: auto;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--text) 16%, transparent);
+}
+
+/* The sweep. It travels the pile's exact height — seven 38px cards on a
+ * 44px step — so the distance is written in px rather than as a
+ * percentage, which on a transform would resolve against the 1px line
+ * itself and go nowhere. */
+.signal-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  height: 1px;
+  opacity: 0;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--text) 80%, transparent),
+    transparent
+  );
+}
+
+/* ## The message
+ *
+ * Positioned from the corner and pushed to the middle with the same
+ * `translate` the agent and the pile use, so the four of them share one
+ * coordinate system and the links below it line up without a magic
+ * number. */
+.signal-message {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(364px, 100%);
+  padding: 14px 16px;
+  border-radius: 9px;
+  border: 1px solid color-mix(in srgb, var(--text) 22%, transparent);
+  background: color-mix(in srgb, var(--text) 12%, transparent);
+  box-shadow: 0 16px 34px rgb(0 0 0 / 28%);
+  translate: calc(50cqw - 50%) calc(50cqh - 96px);
+}
+
+/* The arrival ring. It sits on the message rather than inside it so it
+ * can grow past its edge, and it is a pseudo-element because it exists
+ * only to be seen once — nothing else needs to know it is there. */
+.signal-message::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9px;
+  border: 1px solid color-mix(in srgb, var(--text) 70%, transparent);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.signal-message-head {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--text) 16%, transparent);
+}
+
+.signal-message-lines {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  padding-top: 5px;
+}
+
+.signal-message-lines > i {
+  width: var(--w);
+  height: 5px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--text) 42%, transparent);
+  transform-origin: left center;
+}
+
+.signal-caret {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  height: 11px;
+  opacity: 0;
+}
+
+.signal-caret i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1px;
+  background: var(--text);
+}
+
+.signal-message-check {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  stroke-dasharray: 12;
+  stroke-dashoffset: 0;
+}
+
+.signal-message-check circle {
+  fill: none;
+  stroke: color-mix(in srgb, var(--text) 28%, transparent);
+  stroke-width: 1;
+}
+
+.signal-message-check path {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────────── */
+
+/* Beat one. A signal pops in where it was found and settles into its
+ * slot. It decelerates on arrival: these are being collected, and a
+ * collected thing comes to rest. */
+@keyframes signal-card-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--x), var(--y), 0) scale(0.88);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Beat two. */
+@keyframes signal-agent-move {
+  0% {
+    transform: translate3d(calc(50cqw - 50%), calc(50cqh - 118px), 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes signal-pile-move {
+  0% {
+    transform: translate3d(calc(50cqw - 50%), calc(50cqh - 46px), 0);
+  }
+  100% {
+    transform: translate3d(0, 60px, 0);
+  }
+}
+
+/* Down the pile and back up again. One pass reads as a progress bar —
+ * something filling, on its way somewhere else. A return stroke reads as
+ * reading: the line goes to the bottom, finds what it came for and
+ * brings it back, and the pause implied by the turn is what makes the
+ * verdict that follows look like a conclusion rather than a
+ * coincidence. */
+@keyframes signal-sweep {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  8% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, 302px, 0);
+  }
+  92% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Dimming with a filter, not with opacity: `signal-card-in` already owns
+ * opacity on this element, and two animations do not share a property —
+ * the later wins outright, including outside its own range. Two
+ * properties, and they multiply. */
+@keyframes signal-card-out {
+  0% {
+    filter: opacity(1);
+  }
+  45% {
+    filter: opacity(0.24);
+  }
+  100% {
+    filter: opacity(0);
+  }
+}
+
+@keyframes signal-card-box-up {
+  0% {
+    border-color: color-mix(in srgb, var(--text) 12%, transparent);
+    background-color: color-mix(in srgb, var(--text) 6%, transparent);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    border-color: color-mix(in srgb, var(--text) 50%, transparent);
+    background-color: color-mix(in srgb, var(--text) 18%, transparent);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 22%);
+  }
+}
+
+/* Beat three. The survivors' whole last act, in four stops of one
+ * keyframe set — they gather low in the left column clearing the space
+ * under the agent for the message it is writing, shrink to links and
+ * dock beneath it, wait there, then ride to the middle with it.
+ *
+ * One set rather than three animations, because all four stops move the
+ * same element by `translate`.
+ *
+ * Every stop is worked out rather than measured: a card sits at
+ * `--slot × 44px` inside a pile that is itself 60px down, so each target
+ * is that origin subtracted from where it has to be. The `-182px` in the
+ * last stop is half the message's width and has to match it — the two
+ * are centred by different means and must arrive as one object. */
+@keyframes signal-card-home {
+  0% {
+    translate: 0 0;
+  }
+  22% {
+    translate: 0 calc(130px + var(--rank) * 46px - var(--slot) * 44px);
+  }
+  55%,
+  72% {
+    /* Twelve pixels under the message, which is 62 tall and ends at
+     * 124. This constant and the one below are the same gap seen from
+     * two different origins, so they move together. */
+    translate: calc(var(--rank) * 30px) calc(76px - var(--slot) * 44px);
+  }
+  100% {
+    translate: calc(50cqw - 182px + var(--rank) * 30px)
+      calc(50cqh - 82px - var(--slot) * 44px);
+  }
+}
+
+/* A row becomes a link. The card narrows to the width of the mark it is
+ * about to carry, so that a mark centred in the card lands exactly where
+ * the keyframes put the card. The box dissolving and the link appearing
+ * are two other animations on two other elements, which is the only way
+ * three things can happen to one card at once without any of them
+ * overruling another. */
+@keyframes signal-card-chip {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 20px;
+  }
+}
+
+@keyframes signal-vanish {
+  0% {
+    opacity: 1;
+  }
+  70%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes signal-appear {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes signal-agent-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Written, not placed. `scaleX` from a left origin extends the bar the
+ * way a line of text arrives, and costs no layout; animating `width`
+ * would look identical and relayout the panel on every frame. */
+@keyframes signal-write {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes signal-message-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  26%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Written directly under the agent, at the top of the left column. Only
+ * once the sources have clipped onto it does it take the middle. */
+@keyframes signal-message-settle {
+  0% {
+    translate: 0 62px;
+  }
+  100% {
+    /* -96 rather than -46: `50cqh` is the middle of the layer, which
+     * begins 84px down to clear the caption and is therefore 42px below
+     * the middle of the tile. The other 54 is half the height of the
+     * message and the two links together, so it is the group that ends
+     * up centred and not just its first element. */
+    translate: calc(50cqw - 50%) calc(50cqh - 96px);
+  }
+}
+
+/* The finished message. The border comes up and the shadow gains a rim
+ * of light: bright enough to read as concluded, short of the promoted
+ * look the cards wear, since this is an outcome rather than a selection.
+ * It begins where the travel ends, never while it is still running —
+ * overlapped, the two read as one event and the move is lost inside the
+ * flash. Arrival has to be over before it can be announced. */
+@keyframes signal-message-land {
+  0% {
+    border-color: color-mix(in srgb, var(--text) 22%, transparent);
+    box-shadow: 0 16px 34px rgb(0 0 0 / 28%);
+  }
+  100% {
+    border-color: color-mix(in srgb, var(--text) 58%, transparent);
+    box-shadow:
+      0 16px 40px rgb(0 0 0 / 34%),
+      0 0 0 4px color-mix(in srgb, var(--text) 7%, transparent);
+  }
+}
+
+@keyframes signal-ping {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.07);
+  }
+}
+
+@keyframes signal-message-sent {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 12;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes signal-caret-life {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  86% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* The loops that belong to no beat. They read as "still going" precisely
+ * because they keep going whether or not the reader does. */
+@keyframes signal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes signal-bounce {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes signal-blink {
+  0%,
+  44% {
+    opacity: 1;
+  }
+  45%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes signal-fill {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* The bar that is both the indicator and the clock. `forwards` holds
+   * it full once it has run, which matters when the reader swipes ahead
+   * early: the beat is left looking spent, because it is. */
+  .signal-stage[data-phase="0"] .signal-seg:nth-child(1) i,
+  .signal-stage[data-phase="1"] .signal-seg:nth-child(2) i,
+  .signal-stage[data-phase="2"] .signal-seg:nth-child(3) i {
+    animation: signal-fill var(--beat) linear forwards;
+  }
+
+  /* The three loops, which never stop and are never gated. */
+  .signal-agent-ring i {
+    animation: signal-pulse 3.12s ease-in-out infinite;
+  }
+
+  .signal-spin-arc {
+    animation: signal-spin 1.1s linear infinite;
+  }
+
+  .signal-agent-typing i {
+    animation: signal-bounce 1.49s ease-in-out infinite;
+  }
+
+  .signal-agent-typing i:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .signal-agent-typing i:nth-child(3) {
+    animation-delay: 0.39s;
+  }
+
+  .signal-caret i {
+    animation: signal-blink 1.3s steps(1, end) infinite;
+  }
+
+  /* Everything the beats play. Declared under `[data-phase]` so that
+   * dropping the attribute removes them outright — which is how the
+   * sequence is rewound when the reader scrolls back to the top of the
+   * track. Pausing would only freeze it where it stood. */
+  :where(.signal-stage[data-phase]) {
+    /* Beat one. */
+    .signal-card {
+      animation: signal-card-in var(--in-dur) cubic-bezier(0.22, 0.7, 0.3, 1)
+        var(--in-delay) both paused;
+    }
+
+    /* Beat two. */
+    .signal-agent {
+      animation: signal-agent-move 1.3s cubic-bezier(0.5, 0, 0.2, 1) both paused,
+        signal-agent-out 1.04s linear 3.38s both paused;
+    }
+
+    .signal-pile {
+      animation: signal-pile-move 1.3s cubic-bezier(0.5, 0, 0.2, 1) both paused;
+    }
+
+    .signal-scan {
+      animation: signal-sweep 2.6s ease-in-out 1.43s both paused;
+    }
+
+    .signal-card--drop .signal-card-box {
+      animation: signal-card-out 1.04s linear 3.9s both paused;
+    }
+
+    .signal-card--keep .signal-card-box {
+      animation: signal-card-box-up 1.04s ease-out 3.9s both paused,
+        signal-vanish 0.78s linear 1.82s both paused;
+    }
+
+    /* Beat three. */
+    .signal-card--keep {
+      animation: signal-card-in var(--in-dur) cubic-bezier(0.22, 0.7, 0.3, 1)
+          var(--in-delay) both paused,
+        signal-card-home 4.68s cubic-bezier(0.5, 0, 0.2, 1) both paused,
+        signal-card-chip 0.78s ease-in-out 1.82s both paused;
+    }
+
+    .signal-card-link {
+      animation: signal-appear 0.78s linear 1.82s both paused;
+    }
+
+    .signal-message {
+      animation: signal-message-in 1.04s ease-out 0.65s both paused,
+        signal-message-settle 1.3s cubic-bezier(0.5, 0, 0.2, 1) 3.38s both paused,
+        signal-message-land 1.04s ease-out 4.68s both paused;
+    }
+
+    .signal-message::after {
+      animation: signal-ping 1.04s ease-out 4.68s both paused;
+    }
+
+    .signal-message-lines > i {
+      animation: signal-write 1.04s cubic-bezier(0.3, 0.8, 0.4, 1)
+        var(--line-delay) both paused;
+    }
+
+    .signal-caret {
+      animation: signal-caret-life 2.86s linear 0.52s both paused;
+    }
+
+    .signal-message-check {
+      animation: signal-message-sent 1.04s ease-out 4.42s both paused;
+    }
+  }
+
+  /* ── The gate ──
+   * A beat starts when it arrives and is never stopped again. The three
+   * elements that are animated in more than one beat need a comma list,
+   * because `animation-play-state` is positional: it says nothing about
+   * *which* animation, only which slot. */
+  .signal-stage[data-phase="0"] [data-p="1"],
+  .signal-stage[data-phase="1"] :is([data-p="1"], [data-p="2"]),
+  .signal-stage[data-phase="2"]
+    :is([data-p="1"], [data-p="2"], [data-p="3"]) {
+    animation-play-state: running;
+  }
+
+  .signal-stage[data-phase="2"] .signal-message::after {
+    animation-play-state: running;
+  }
+
+  .signal-stage[data-phase="0"] .signal-card,
+  .signal-stage[data-phase="1"] .signal-card,
+  .signal-stage[data-phase="2"] .signal-card {
+    animation-play-state: running;
+  }
+
+  .signal-stage[data-phase="0"] .signal-card--keep,
+  .signal-stage[data-phase="1"] .signal-card--keep {
+    animation-play-state: running, paused, paused;
+  }
+
+  .signal-stage[data-phase="2"] .signal-card--keep {
+    animation-play-state: running, running, running;
+  }
+
+  .signal-stage[data-phase="1"] .signal-card--drop .signal-card-box,
+  .signal-stage[data-phase="2"] .signal-card--drop .signal-card-box {
+    animation-play-state: running;
+  }
+
+  .signal-stage[data-phase="1"] .signal-card--keep .signal-card-box {
+    animation-play-state: running, paused;
+  }
+
+  .signal-stage[data-phase="2"] .signal-card--keep .signal-card-box {
+    animation-play-state: running, running;
+  }
+
+  .signal-stage[data-phase="1"] .signal-agent,
+  .signal-stage[data-phase="2"] .signal-agent {
+    animation-play-state: running, paused;
+  }
+
+  .signal-stage[data-phase="2"] .signal-agent {
+    animation-play-state: running, running;
+  }
+}
+/* ── Hero parallax ────────────────────────────────────────────────
+ * The hero travels at a fraction of the scroll while the panel below
+ * runs at full speed, closes on it and covers it. The gap between the
+ * two speeds is what reads as depth.
+ *
+ * It is done by handing most of the scroll back: over a 200vh range the
+ * section is translated 180vh downward, so it nets out climbing at 0.1x.
+ * Driving that from a scroll listener judders, because the callback lands
+ * a frame after the browser has already painted the scroll; a scroll
+ * timeline is evaluated by the compositor alongside the scroll itself and
+ * cannot fall behind.
+ *
+ * The range runs well past the point where the panel has fully covered
+ * the hero, so the hold at the end of the animation is never visible.
+ *
+ * Unsupported browsers get no rule at all, so the hero scrolls at normal
+ * speed. That loses the effect and keeps the page smooth, which is the
+ * right way round.
+ */
+@keyframes landing-hero-hold {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 180vh, 0);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .landing-hero-hold {
+      animation: landing-hero-hold linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 200vh;
+    }
+  }
+}
+
+/* ── Hero photograph ──────────────────────────────────────────────
+ * The picture is the point, so it is barely touched: a little
+ * desaturation to sit with the warm neutral palette, and a hair of
+ * brightness off so white type has something to sit on.
+ *
+ * The source is 16:9, so a viewport-shaped crop only loses about a tenth
+ * of the width and the framing survives centred. The earlier panorama
+ * needed `object-position` pinned off-centre to keep the type column off
+ * the empty floor; this one does not.
+ */
+.landing-hero-image {
+  object-position: center;
+  filter: saturate(0.88) brightness(0.94);
+}
+
+/* Darkens the left column, where the headline sits, and clears by the
+ * middle so the rest of the room keeps its light. */
+.landing-hero-scrim {
+  background: linear-gradient(
+    to right,
+    rgba(8, 11, 16, 0.86) 0%,
+    rgba(8, 11, 16, 0.66) 26%,
+    rgba(8, 11, 16, 0.3) 56%,
+    rgba(8, 11, 16, 0.08) 82%,
+    rgba(8, 11, 16, 0.02) 100%
+  );
+}
+
+/* A shallow band behind the top bar, for the state where the bar has no
+ * fill of its own. Kept light: it only has to carry white type across
+ * the top ~110px, not to dim the picture. */
+.landing-hero-topband {
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 11, 16, 0.42) 0%,
+    rgba(8, 11, 16, 0.18) 58%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 720px) {
+  /* A portrait crop of a very wide picture leaves the type over
+     whatever happens to fall in the slice, so the phone gets a flat,
+     heavier grade rather than a horizontal ramp. */
+  .landing-hero-scrim {
+    background: linear-gradient(
+      170deg,
+      rgba(8, 11, 16, 0.82) 0%,
+      rgba(8, 11, 16, 0.66) 48%,
+      rgba(8, 11, 16, 0.5) 100%
+    );
+  }
+}

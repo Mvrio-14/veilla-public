@@ -1,0 +1,14 @@
+# Test and lint tooling.
+#
+# Kept separate from requirements.txt so the Render image stays slim:
+# the Dockerfile copies only requirements.txt.
+#
+# Install with:
+#     pip install -r requirements_dev.txt
+#
+# This is what CI installs.
+
+-r requirements.txt
+
+pytest==8.4.2
+ruff==0.16.8

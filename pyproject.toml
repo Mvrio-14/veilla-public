@@ -1,0 +1,64 @@
+# Tooling configuration for the Python side of Veilla.
+#
+# This file holds settings only — the project is not packaged or
+# installed, it is run from a checkout. Dependencies live in
+# requirements.txt (runtime) and requirements_dev.txt (tests and lint).
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+# Archived experiments. They are kept for the record, not maintained,
+# and linting them would only produce noise nobody will act on.
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+# A deliberately small set. Each family earns its place:
+#
+#   F   pyflakes — undefined names, unused imports, unused variables.
+#       The only family here that finds outright mistakes.
+#   I   import sorting. Cosmetic, but it removes a whole category of
+#       pointless diff noise between contributors.
+#   UP  pyupgrade — rewrites to the syntax this project's Python
+#       already supports (3.12), e.g. `Optional[str]` → `str | None`.
+#   DTZ naive datetimes. Project-specific and the reason this family is
+#       here at all: every timestamp column is TIMESTAMPTZ, and
+#       CLAUDE.md forbids reintroducing
+#       `datetime.utcnow()`. This turns that rule from a note someone
+#       has to remember into one the tooling enforces.
+#
+# Families deliberately left out, with the reason, so that nobody
+# re-enables them expecting an improvement:
+#
+#   B008  flags a function call as a default argument — which is
+#         exactly how FastAPI declares dependencies
+#         (`Depends(get_required_auth)`). 96 false positives.
+#   BLE001, S110  flag broad `except Exception` and `try/except/pass`.
+#         Both are deliberate here: the worker swallows a failing step
+#         so the rest of the pass still runs, and storage access is
+#         defensive by design. 166 findings, none of them a defect.
+select = ["F", "I", "UP", "DTZ"]
+
+# One rule out of an otherwise-wanted family:
+#
+#   UP017  rewrites `timezone.utc` to `datetime.UTC`. The two are the
+#          same object; the codebase spells it the first way in 33
+#          places and CLAUDE.md documents that spelling. Churning all
+#          of them would make the documentation wrong to gain nothing.
+ignore = ["UP017"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Quiet by default; the failures are what matters, not the dots.
+addopts = "-q"
+
+# The tests import `src.*`, and the project is not installed, so the
+# repo root has to be on sys.path. Every other entrypoint gets that
+# for free — `python -m src.runner`, `python -m scripts.<x>` and
+# `uvicorn src.api:app` all insert the working directory. The bare
+# `pytest` console script is the single invocation that does not, and
+# it is the one CI and most IDE test runners use: without this line it
+# fails collection with `No module named 'src'`. Declaring the path
+# here makes every spelling work instead of relying on how pytest
+# happened to be launched.
+pythonpath = ["."]
